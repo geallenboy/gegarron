@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 import { Button } from '@/components/ui/button'
 import { Rss, Copy, ClipboardText } from '@phosphor-icons/react'
@@ -22,20 +22,21 @@ export default function Feed() {
   }
 
   return (
-    <div className="rounded-2xl border p-6 border-muted shadow-sm">
+    <div className="rounded-2xl border border-muted p-6 shadow-sm">
       <h2 className="flex text-sm font-semibold">
         <Rss size={26} weight="duotone" />
-        <span className="ml-3">Subscribe my blogs</span>
+        <span className="ml-3">订阅我的文章</span>
       </h2>
-      <p className="mt-4 ml-1 text-sm text-muted-foreground">
-        Welcome to Subscribe my blogs
+      <p className="ml-1 mt-4 text-sm text-muted-foreground">
+        欢迎订阅我的文章
       </p>
       <div className="mt-4 flex gap-4">
         <div className="relative flex-auto">
-          <div 
-          className={cn("min-w-0 flex-auto rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background",
-            copied ? 'text-primary': ''
-          )}
+          <div
+            className={cn(
+              'min-w-0 flex-auto rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background',
+              copied ? 'text-primary' : '',
+            )}
           >
             {feedUrl}
           </div>
@@ -50,16 +51,14 @@ export default function Feed() {
             ) : (
               <ClipboardText size={32} weight="duotone" />
             )}
-            <span className="sr-only">
-              {copied ? 'Copied!' : 'Copy'}
-            </span>
+            <span className="sr-only">{copied ? 'Copied!' : 'Copy'}</span>
           </Button>
         </div>
-        <Button 
-          onClick={() => window.open(feedUrl, '_blank')} 
-          className="hidden md:block flex-none bg-primary text-primary-foreground"
+        <Button
+          onClick={() => window.open(feedUrl, '_blank')}
+          className="hidden flex-none bg-primary text-primary-foreground md:block"
         >
-          Subscribe
+          订阅
         </Button>
       </div>
     </div>

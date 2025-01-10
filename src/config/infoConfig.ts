@@ -1,37 +1,36 @@
 
 // personal info
-export const name = 'Corey Chiu'
-export const headline = 'Software engineer, Full-Stack web developer, and indie hacker.'
-export const introduction = 'I’m Corey, a software engineer based in Shenzhen, China. I like coding, and building interesting things'
-export const email = 'iamcoreychiu@gmail.com'
-export const githubUsername = 'iamcorey'
+export const name = 'GeGarron'
+export const headline = '软件工程师、AI全栈 Web 开发者、独立开发者。'
+export const introduction = '我是Garron，一名软件工程师。喜欢编程，喜欢新的技术，喜欢构建有趣的东西。'
+export const email = 'gejialun88@gmail.com'
+export const githubUsername = 'geallenboy'
 
 // about page
-export const aboutMeHeadline = "I'm Corey Chiu, a software engineer based in Shenzhen, China."
+export const aboutMeHeadline = "我是GeGarron, 一名软件工程师。"
 export const aboutParagraphs = [
-  "I love coding. I learned programming when I in college. I wrote my first program in Java when I was 18.",
-  "I have a lot of hobbies, such as travelling, photography, watching movies, music and so on.",
-  "I'm working as a software develop engineer in Shenzhen, China now. And I'm building a lot of side projects in my spare time."
+  "我热爱编程。拥有10年前端编程经验、目前专注于AI应用的开发与探索，致力于将人工智能技术与实际场景相结合，打造创新、高效的解决方案。",
+  "我有很多爱好、比如健身、看电影、听音乐、旅行等等。"
 ]
 
 
 // projects
-export const projectHeadLine = "What I've done and what I'm doing."
-export const projectIntro = "I've worked on a variety of projects, from simple websites to complex web applications. And many of them are open-source. Here are a few of my favorites."
+export const projectHeadLine = "我曾做过的事和我正在做的事."
+export const projectIntro = "我参与过各种类型的项目，从简单的网站到复杂的网页应用程序，其中许多是开源的。以下是我最喜欢的一些项目。"
 
 
 // blog
-export const blogHeadLine = "What I've thinking about."
-export const blogIntro = "I've written something about AI, programming and life."
+export const blogHeadLine = "我在思考的事情"
+export const blogIntro = "我写了一些关于AI、编程和生活的内容."
 
 // changelog
-export const changelogHeadLine = "What's new about this site"
-export const changelogIntro = "Check out the latest changes to this site."
+export const changelogHeadLine = "这个网站的新内容"
+export const changelogIntro = "查看本站的最新更新。"
 
 
 // friends
-export const friendsHeadLine = "Corey' friends"
-export const friendsIntro = "Meet some interesting friends."
+export const friendsHeadLine = "garron的朋友"
+export const friendsIntro = "结识一些有趣的朋友。"
 
 // social links
 export type SocialLinkType = {
@@ -45,32 +44,17 @@ export const socialLinks: Array<SocialLinkType> = [
   {
     name: 'X',
     icon: 'x',
-    href: 'https://x.com/realcoreychiu'
-  },
-  {
-    name: 'Bsky',
-    icon: 'bsky',
-    href: 'https://bsky.app/profile/coreychiu.com'
-  },
-  {
-    name: 'Jike',
-    icon: 'pill',
-    href: 'https://okjk.co/P7c1zU'
+    href: 'https://x.com/gejialun88'
   },
   {
     name: 'Github',
     icon: 'github',
-    href: 'https://github.com/iamcorey'
+    href: 'https://github.com/geallenboy'
   },
   {
     name: 'Wechat',
     icon: 'wechat',
     href: 'https://mp.weixin.qq.com/s/DxnRgqNfgzXIhqj6w_x0dQ'
-  },
-  {
-    name: 'Ko-fi',
-    icon: 'coffee',
-    href: 'https://ko-fi.com/coreychiu'
   }
 ]
 
@@ -89,11 +73,11 @@ export type EducationItemType = {
 
 export const educationList: Array<EducationItemType> = [
   {
-    school: 'Not a school',
-    major: 'Computer Science and Technology',
-    logo: 'college',
-    start: '2016',
-    end: '2020'
+    school: '非传统学校',
+    major: '计算机科学与技术',
+    logo: '学院',
+    start: '2012',
+    end: '2016'
   },
 ]
 
@@ -111,11 +95,11 @@ export type CareerItemType = {
 
 export const careerList: Array<CareerItemType> = [
   {
-    company: 'Not a corp',
-    title: 'Software Engineer',
-    logo: 'bank',
-    start: '2020',
-    end: 'Present'
+    company: 'AIing',
+    title: '软件工程师',
+    logo: '电商',
+    start: '2016',
+    end: '2024'
   },
 ]
 
@@ -136,113 +120,71 @@ export type ProjectItemType = {
 // projects 
 export const projects: Array<ProjectItemType> = [
   {
-    name: 'AI Best Tools',
-    description:
-      'Find the best AI tools in AIBest.tools',
-    link: { href: 'aibest.tools', label: 'AI Best Tools' },
+    name: 'AI Image',
+    description: 'AI 生成图片,自定义模型训练',
+    link: { href: 'https://github.com/geallenboy/image-ai', label: 'AI Image' },
     logo: '/images/icon/aibesttools.png',
-    category: ['Website'],
+    category: ['网站'],
     techStack: ['Next.js', 'TailwindCSS', 'Shadcn/UI'],
-    tags: ['AI', 'Tools Directory']
+    tags: ['AI', 'Image']
   },
   {
-    name: 'Best Directories',
-    description:
-      'Your ultimate directory of directories.',
-    link: { href: 'bestdirectories.org', label: 'Best Directories' },
+    name: 'AI Logo',
+    description: '您的终极目录合集。',
+    link: { href: 'https://github.com/geallenboy/logo-ai', label: 'AI Logo' },
     logo: '/images/icon/bestdirectories.png',
-    category: ['Website'],
+    category: ['网站'],
     techStack: ['Next.js', 'TailwindCSS', 'Shadcn/UI'],
-    tags: ['Directory of Directories']
+    tags: ['目录合集']
   },
   {
-    name: 'User Growth',
-    description:
-      'Boost Your business growth with UserGrowth.link',
-    link: { href: 'usergrowth.link', label: 'User Growth' },
+    name: 'wiper',
+    description: '最好用的自定义画板工具',
+    link: { href: 'https://github.com/geallenboy/wiper', label: 'wiper' },
     logo: '/images/icon/usergrowth.ico',
-    category: ['Website'],
+    category: ['网站'],
     techStack: ['Next.js', 'TailwindCSS', 'Shadcn/UI'],
-    tags: ['User Growth', 'Marketing', 'SEO']
+    tags: ['画板', '', 'SEO']
   },
   {
-    name: 'Dev Toolset',
-    description:
-      'Open-source database-free tools directory.',
-    link: { href: 'devtoolset.net', label: 'Dev Toolset' },
+    name: 'AI故事魔法师',
+    description: 'AI 故事生成',
+    link: { href: 'https://github.com/geallenboy/ai-story-wizard', label: 'ai story wizard' },
     logo: '/images/icon/devtoolset.png',
-    category: ['Website'],
+    category: ['网站'],
     techStack: ['Next.js', 'TailwindCSS', 'Shadcn/UI'],
-    tags: ['Open Source', 'Database-Free', 'Tools Directory']
+    tags: ['AI故事', '生成式AI']
   },
-  {
-    name: 'Domain Score',
-    description:
-      'Ultimate AI-Powered tool for domain scoring and evaluation',
-    link: { href: 'domainscore.ai', label: 'Domain Score' },
-    logo: '/images/icon/domainscore.png',
-    category: ['Website'],
-    techStack: ['Next.js', 'TailwindCSS', 'Shadcn/UI'],
-    tags: ['Domain', 'AI', 'SEO']
-  },
-  {
-    name: 'MagicBox Tools',
-    description:
-      'Find the best AI tools in MagicBox.tools',
-    link: { href: 'magicbox.tools', label: 'MagicBox Tools' },
-    logo: '/images/icon/magicbox.png',
-    category: ['Website'],
-    techStack: ['Next.js', 'TailwindCSS', 'Shadcn/UI'],
-    tags: ['AI', 'Tools Directory']
-  },
+
 ]
+
 
 export const githubProjects: Array<ProjectItemType> = [
   {
-    name: 'Devtoolset',
-    description: 'Open-source & database-free developer tools navigator / 开源无数据库配置的开发者工具导航站',
-    link: { href: 'github.com/iAmCorey/devtoolset', label: 'Devtoolset' },
-    gitStars: 146,
-    gitForks: 47
+    name: 'landing-page',
+    description: '构建一个 Next.js AI Saas 着陆页面｜TailwindCSS、React、Typescript',
+    link: { href: 'https://github.com/geallenboy/landing-page', label: 'landing page' },
+    gitStars: 0,
+    gitForks: 0
+  },
+
+  {
+    name: '独立开发者工具精选',
+    description: '独立开发/出海开发相关技术栈及工具收录',
+    link: { href: 'https://github.com/geallenboy', label: 'Awesome Indie Hacker Tools' },
+    gitStars: 0,
+    gitForks: 0
   },
   {
-    name: 'Chrome Extension Plasmo Template',
-    description:
-      'A chrome extension template using plasmo, tailwind css, shadcn/ui',
-    link: { href: 'github.com/iAmCorey/chrome-extension-plasmo-template', label: 'Chrome Extension Plasmo Template' },
-    gitStars: 52,
-    gitForks: 10
-  },
-  {
-    name: 'Awesome Indie Hacker Tools',
-    description:
-      '独立开发/出海开发相关技术栈及工具收录 / Find the best tools for indie hackers here',
-    link: { href: 'github.com/iAmCorey/awesome-indie-hacker-tools', label: 'Awesome Indie Hacker Tools' },
-    gitStars: 763,
-    gitForks: 61
-  },
-  {
-    name: 'Awesome AI Directory',
-    description:
-      'AI资源工具导航站收录 / Find all the best AI directories',
-    link: { href: 'github.com/iAmCorey/awesome-ai-directory', label: 'Awesome AI Directory' },
+    name: 'AI 资源工具导航',
+    description: 'AI 资源工具导航站收录',
+    link: { href: 'https://github.com/geallenboy', label: 'Awesome AI Directory' },
     gitStars: 37,
     gitForks: 5
   },
-  {
-    name: 'Producthunt Daily Bot',
-    description:
-      'A bot getting product hunt daily top products',
-    link: { href: 'github.com/iAmCorey/producthunt-daily-bot', label: 'Producthunt Daily Bot' },
-  },
-  {
-    name: 'Cantonese Echoes',
-    description:
-      'Cantonese Echoes / 粵語殘片',
-    link: { href: 'github.com/iAmCorey/Cantonese-Echoes', label: 'Cantonese Echoes' },
-    gitStars: 1
-  },
+
 ]
+
 
 // changelog
 export type ChangelogItemType = {
@@ -255,38 +197,30 @@ export type ChangelogItemType = {
 
 export const changelogList: Array<ChangelogItemType> = [
   {
-    date: '2024-11-18',
+    date: '2025-1-6',
     content: [
       {
-        title: '💡 Idea come up',
-        description: 'I want to have a portfolio websit. The website doesn\'t need to be so fancy but should have a good design. It need to show all my projects and have a blog section to share my ideas and my development experience.'
+        title: '💡 灵感迸发 / 想法浮现',
+        description: '我想要一个作品集网站。网站不需要太华丽，但需要有良好的设计。它需要展示我所有的项目，并包含一个博客部分，用于分享我的想法和开发经验。'
       },
     ]
   },
   {
-    date: '2024-11-22',
+    date: '2025-1-5',
     content: [
       {
-        title: '🛫 Project deployed',
-        description: 'My portfolio website\'s first version finished building and deployed'
+        title: '🛫 项目已部署',
+        description: '我的作品集网站第一版已完成构建并部署。'
       },
     ]
   },
+
   {
-    date: '2024-12-10',
+    date: '2024-1-1',
     content: [
       {
-        title: '👭 Add friends page',
-        description: 'Add friends page to list my friends'
-      },
-    ]
-  },
-  {
-    date: '2024-12-11',
-    content: [
-      {
-        title: '🌿 Open source',
-        description: 'Open source my portfolio website'
+        title: '🌿 开源',
+        description: '开源我的作品集网站'
       },
     ]
   }
@@ -299,7 +233,6 @@ export const techIcons = [
   "supabase",
   "cloudflare",
   "java",
-  "oracle",
   "mysql",
   "react",
   "nodedotjs",
@@ -313,7 +246,7 @@ export const techIcons = [
   "github",
   "visualstudiocode",
   "androidstudio",
-  "ios",
+  "rn",
   "apple",
   "wechat"
 ];
@@ -329,37 +262,9 @@ export type FriendItemType = {
 
 export const friends: Array<FriendItemType> = [
   {
-    name: 'Corey Chiu',
-    link: { href: 'https://coreychiu.com' },
-  },
-  {
-    name: 'Axis Wang',
-    link: { href: 'https://wangxs.cfd' },
-  },
-  {
-    name: 'Greener-Dalii Studio',
-    link: { href: 'https://greenerdalii.top' },
-  },
-  {
-    name: 'Luolink',
-    link: { href: 'https://luolink.com' },
-  },
-  {
-    name: 'Frend guo',
-    link: { href: 'https://frendguo.com' },
-  },
-  {
-    name: 'Amon Xu',
-    link: { href: 'https://amonxu.com' },
-  },
-  {
-    name: 'Bill Fu',
-    link: { href: 'https://billfu.com' },
-  },
-  {
-    name: 'SavoKiss',
-    link: { href: 'https://savokiss.com' },
-  },
+    name: 'GeGarron',
+    link: { href: 'https://gegarron.com' },
+  }
 ]
 
 

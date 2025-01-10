@@ -18,9 +18,9 @@ async function importBlog(
     path.join(process.cwd(), 'src/content/blog', blogFilename),
     'utf-8'
   )
-  
+
   const { data } = matter(source)
-  
+
   // @ts-expect-error
   return {
     slug: blogFilename.replace(/\.mdx$/, ''),

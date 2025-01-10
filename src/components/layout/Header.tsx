@@ -8,14 +8,14 @@ import { Popover, Transition } from '@headlessui/react'
 import clsx from 'clsx'
 
 import { Container } from '@/components/layout/Container'
-import avatarImage from '@/images/avatar.jpg'
+import avatarImage from '@/images/avatar.png'
 import { navItems } from '@/config/siteConfig'
 import { ThemeToggle } from '@/components/shared/ThemeToggle'
 import { GithubRepo } from '@/components/shared/GithubRepo'
 import { name } from '@/config/infoConfig'
 import { ChevronDownIcon, XIcon } from 'lucide-react'
 
-import TypingAnimation from "@/components/ui/typing-animation";
+import TypingAnimation from '@/components/ui/typing-animation'
 
 function MobileNavItem({
   href,
@@ -39,7 +39,7 @@ function MobileNavigation(
   return (
     <Popover {...props}>
       <Popover.Button className="group flex items-center rounded-full px-4 py-2 text-sm font-medium shadow-lg ring-1 ring-muted backdrop-blur ">
-        Menu
+        菜单
         <ChevronDownIcon className="ml-3 h-auto w-2" />
       </Popover.Button>
       <Transition.Root>
@@ -65,7 +65,7 @@ function MobileNavigation(
         >
           <Popover.Panel
             focus
-            className="fixed inset-x-4 top-8 z-50 origin-top rounded-3xl p-8 ring-1 ring-muted bg-card"
+            className="fixed inset-x-4 top-8 z-50 origin-top rounded-3xl bg-card p-8 ring-1 ring-muted"
           >
             <div className="flex flex-row-reverse items-center justify-between">
               <Popover.Button aria-label="Close menu" className="-m-1 p-1">
@@ -78,7 +78,9 @@ function MobileNavigation(
             <nav className="mt-6">
               <ul className="-my-2 divide-y divide-zinc-100 text-base dark:divide-zinc-100/5">
                 {navItems.map((item) => (
-                  <MobileNavItem key={item.name} href={item.href}>{item.name}</MobileNavItem>
+                  <MobileNavItem key={item.name} href={item.href}>
+                    {item.name}
+                  </MobileNavItem>
                 ))}
               </ul>
             </nav>
@@ -106,7 +108,7 @@ function NavItem({
           'relative block px-3 py-2 transition',
           isActive
             ? 'text-primary'
-            : 'opacity-80 hover:opacity-100 hover:text-primary',
+            : 'opacity-80 hover:text-primary hover:opacity-100',
         )}
       >
         {children}
@@ -121,7 +123,7 @@ function NavItem({
 function DesktopNavigation(props: React.ComponentPropsWithoutRef<'nav'>) {
   return (
     <nav {...props}>
-      <ul className="flex rounded-full px-3 text-sm font-medium bg-card ring-1 ring-muted shadow-md backdrop-blur">
+      <ul className="flex rounded-full bg-card px-3 text-sm font-medium shadow-md ring-1 ring-muted backdrop-blur">
         {navItems.map((item, index) => (
           <Fragment key={item.name}>
             {index > 0 && (
@@ -137,8 +139,6 @@ function DesktopNavigation(props: React.ComponentPropsWithoutRef<'nav'>) {
   )
 }
 
-
-
 function clamp(number: number, a: number, b: number) {
   let min = Math.min(a, b)
   let max = Math.max(a, b)
@@ -153,7 +153,7 @@ function AvatarContainer({
   showName?: boolean
 }) {
   return (
-    <div className='flex flex-row items-center gap-2'>
+    <div className="flex flex-row items-center gap-2">
       <div
         className={clsx(
           className,
@@ -162,11 +162,7 @@ function AvatarContainer({
         {...props}
       />
       {showName && (
-        <Link
-          href="/"
-          aria-label="Home"
-          className='pointer-events-auto'
-        >
+        <Link href="/" aria-label="Home" className="pointer-events-auto">
           <div className="text-md font-semibold capitalize">{name}</div>
         </Link>
       )}
@@ -298,8 +294,6 @@ export function Header() {
       setProperty('--avatar-hi-opacity', opacity.toString())
     }
 
-
-
     function updateStyles() {
       updateHeaderStyles()
       updateAvatarStyles()
@@ -361,15 +355,15 @@ export function Header() {
                       style={{ transform: 'var(--avatar-image-transform)' }}
                     />
                     <div
-                      className="text-3xl md:text-6xl font-bold tracking-tight flex flex-row"
+                      className="flex flex-row text-3xl font-bold tracking-tight md:text-6xl"
                       style={{
                         opacity: 'var(--avatar-hi-opacity, 0)',
-                        transform: 'var(--avatar-hi-transform)'
+                        transform: 'var(--avatar-hi-transform)',
                       }}
                     >
                       Hi,{' '}
                       <TypingAnimation
-                        className="text-3xl md:text-6xl font-bold tracking-tight"
+                        className="text-3xl font-bold tracking-tight md:text-6xl"
                         text={`I'm ${name} `}
                         duration={150}
                       />

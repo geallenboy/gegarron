@@ -9,19 +9,84 @@ export default {
   plugins: [typographyPlugin, require("tailwindcss-animate")],
   theme: {
   	fontSize: {
-  		xs: ['0.8125rem', { lineHeight: '1.5rem' }],
-  		sm: ['0.875rem', { lineHeight: '1.5rem' }],
-  		base: ['1rem', { lineHeight: '1.75rem' }],
-  		lg: ['1.125rem', { lineHeight: '1.75rem' }],
-  		xl: ['1.25rem', { lineHeight: '2rem' }],
-  		'2xl': ['1.5rem', { lineHeight: '2rem' }],
-  		'3xl': ['1.875rem', { lineHeight: '2.25rem' }],
-  		'4xl': ['2rem', { lineHeight: '2.5rem' }],
-  		'5xl': ['3rem', { lineHeight: '3.5rem' }],
-  		'6xl': ['3.75rem', { lineHeight: '1' }],
-  		'7xl': ['4.5rem', { lineHeight: '1' }],
-  		'8xl': ['6rem', { lineHeight: '1' }],
-  		'9xl': ['8rem', { lineHeight: '1' }]
+  		xs: [
+  			'0.8125rem',
+  			{
+  				lineHeight: '1.5rem'
+  			}
+  		],
+  		sm: [
+  			'0.875rem',
+  			{
+  				lineHeight: '1.5rem'
+  			}
+  		],
+  		base: [
+  			'1rem',
+  			{
+  				lineHeight: '1.75rem'
+  			}
+  		],
+  		lg: [
+  			'1.125rem',
+  			{
+  				lineHeight: '1.75rem'
+  			}
+  		],
+  		xl: [
+  			'1.25rem',
+  			{
+  				lineHeight: '2rem'
+  			}
+  		],
+  		'2xl': [
+  			'1.5rem',
+  			{
+  				lineHeight: '2rem'
+  			}
+  		],
+  		'3xl': [
+  			'1.875rem',
+  			{
+  				lineHeight: '2.25rem'
+  			}
+  		],
+  		'4xl': [
+  			'2rem',
+  			{
+  				lineHeight: '2.5rem'
+  			}
+  		],
+  		'5xl': [
+  			'3rem',
+  			{
+  				lineHeight: '3.5rem'
+  			}
+  		],
+  		'6xl': [
+  			'3.75rem',
+  			{
+  				lineHeight: '1'
+  			}
+  		],
+  		'7xl': [
+  			'4.5rem',
+  			{
+  				lineHeight: '1'
+  			}
+  		],
+  		'8xl': [
+  			'6rem',
+  			{
+  				lineHeight: '1'
+  			}
+  		],
+  		'9xl': [
+  			'8rem',
+  			{
+  				lineHeight: '1'
+  			}
+  		]
   	},
   	typography: 'typographyStyles',
   	extend: {
@@ -70,6 +135,33 @@ export default {
   				'3': 'hsl(var(--chart-3))',
   				'4': 'hsl(var(--chart-4))',
   				'5': 'hsl(var(--chart-5))'
+  			}
+  		},
+  		animation: {
+  			orbit: 'orbit calc(var(--duration)*1s) linear infinite',
+  			meteor: 'meteor 5s linear infinite'
+  		},
+  		keyframes: {
+  			orbit: {
+  				'0%': {
+  					transform: 'rotate(calc(var(--angle) * 1deg)) translateY(calc(var(--radius) * 1px)) rotate(calc(var(--angle) * -1deg))'
+  				},
+  				'100%': {
+  					transform: 'rotate(calc(var(--angle) * 1deg + 360deg)) translateY(calc(var(--radius) * 1px)) rotate(calc((var(--angle) * -1deg) - 360deg))'
+  				}
+  			},
+  			meteor: {
+  				'0%': {
+  					transform: 'rotate(215deg) translateX(0)',
+  					opacity: '1'
+  				},
+  				'70%': {
+  					opacity: '1'
+  				},
+  				'100%': {
+  					transform: 'rotate(215deg) translateX(-500px)',
+  					opacity: '0'
+  				}
   			}
   		}
   	}

@@ -1,20 +1,14 @@
 import { type Metadata } from 'next'
 import Image from 'next/image'
-import Link from 'next/link'
-import clsx from 'clsx'
 import { aboutMeHeadline, aboutParagraphs } from '@/config/infoConfig'
 import { Container } from '@/components/layout/Container'
 
-import portraitImage from '@/images/portrait.jpg'
+import portraitImage from '@/images/portrait.png'
 import SocialLinks from '@/components/about/SocialLinks'
 
-
-
-
 export const metadata: Metadata = {
-  title: 'About',
-  description:
-    'I’m Spencer Sharp. I live in New York City, where I design the future.',
+  title: '关于',
+  description: '我是garron。我来自中国，在这里设计未来。',
 }
 
 export default function About() {
@@ -32,14 +26,12 @@ export default function About() {
           </div>
         </div>
         <div className="lg:order-first lg:row-span-2">
-          <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
+          <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
             {aboutMeHeadline}
           </h1>
           <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
             {aboutParagraphs.map((paragraph, index) => (
-              <p key={index}>
-                {paragraph}
-              </p>
+              <p key={index}>{paragraph}</p>
             ))}
           </div>
         </div>

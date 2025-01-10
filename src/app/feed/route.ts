@@ -21,7 +21,7 @@ export async function GET(req: Request) {
 
   let feed = new Feed({
     title: author.name,
-    description: name + '\'s blog',
+    description: name + '的文章',
     author,
     id: siteUrl,
     link: siteUrl,
