@@ -1,5 +1,7 @@
 import rehypePrism from '@mapbox/rehype-prism'
 import nextMDX from '@next/mdx'
+import createNextIntlPlugin from 'next-intl/plugin'
+const withNextIntl = createNextIntlPlugin()
 import remarkGfm from 'remark-gfm'
 
 /** @type {import('next').NextConfig} */
@@ -10,16 +12,16 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'favicon.im'
+        hostname: 'favicon.im',
       },
       {
         protocol: 'https',
-        hostname: 'www.google.com'
+        hostname: 'www.google.com',
       },
       {
         protocol: 'https',
         hostname: 'images.unsplash.com',
-      }
+      },
     ],
   },
 }
@@ -32,4 +34,4 @@ const withMDX = nextMDX({
   },
 })
 
-export default withMDX(nextConfig)
+export default withNextIntl(withMDX(nextConfig))

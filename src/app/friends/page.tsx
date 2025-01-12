@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description: friendsHeadLine,
 }
 
-export default function Friends() {
+export default function FriendsPage() {
   return (
     <SimpleLayout title={friendsHeadLine} intro={friendsIntro}>
       <ul

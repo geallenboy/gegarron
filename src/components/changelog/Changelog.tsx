@@ -1,6 +1,7 @@
 import { Card } from '@/components/shared/Card'
 import { useId } from 'react'
 import { ChangelogItemType, changelogList } from '@/config/infoConfig'
+import { useLocale } from 'next-intl'
 
 function ChangelogSection({
   date,
@@ -29,7 +30,6 @@ function ChangelogSection({
   )
 }
 
-
 function ChangelogItem({
   title,
   description,
@@ -39,28 +39,29 @@ function ChangelogItem({
 }) {
   return (
     <Card as="li">
-      <Card.Title as="h3">
-        {title}
-      </Card.Title>
+      <Card.Title as="h3">{title}</Card.Title>
       <Card.Description>{description}</Card.Description>
     </Card>
   )
 }
 
 export default function ChangelogBlock() {
+  const locale = useLocale()
   return (
     <>
-      {changelogList.map((item: ChangelogItemType, index) => (
+      {changelogList[locale].map((item: ChangelogItemType, index: number) => (
         <ChangelogSection date={item.date} key={index}>
-          {item.content.map((content: { title: string, description: string }, index2) => (
-            <ChangelogItem
-              title={content.title}
-              description={content.description}
-              key={index2}
-            />
-          ))}
+          {item.content.map(
+            (content: { title: string; description: string }, index2) => (
+              <ChangelogItem
+                title={content.title}
+                description={content.description}
+                key={index2}
+              />
+            ),
+          )}
         </ChangelogSection>
       ))}
-    </>)
-
+    </>
+  )
 }

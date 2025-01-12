@@ -8,13 +8,11 @@ import { blogHeadLine, blogIntro } from '@/config/infoConfig'
 
 export const runtime = process.env.NEXT_RUNTIME === 'edge' ? 'edge' : 'nodejs'
 
-function Blog({ blog }: { blog: BlogType }) {
+const Blog = ({ blog }: { blog: BlogType }) => {
   return (
     <article className="md:grid md:grid-cols-4 md:items-baseline">
       <Card className="md:col-span-3">
-        <Card.Title href={`/blogs/${blog.slug}`}>
-          {blog.title}
-        </Card.Title>
+        <Card.Title href={`/blogs/${blog.slug}`}>{blog.title}</Card.Title>
         <Card.Eyebrow
           as="time"
           dateTime={blog.date}
@@ -39,18 +37,14 @@ function Blog({ blog }: { blog: BlogType }) {
 
 export const metadata: Metadata = {
   title: 'Blogs',
-  description:
-    blogIntro
+  description: blogIntro,
 }
 
-export default async function BlogsIndex() {
+export default async function BlogsPage() {
   let blogs = await getAllBlogs()
 
   return (
-    <SimpleLayout
-      title={blogHeadLine}
-      intro={blogIntro}
-    >
+    <SimpleLayout title={blogHeadLine} intro={blogIntro}>
       <div className="md:border-l md:border-zinc-100 md:pl-6 md:dark:border-zinc-700/40">
         <div className="flex max-w-3xl flex-col space-y-16">
           {blogs.map((blog: BlogType) => (

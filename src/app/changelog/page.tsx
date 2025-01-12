@@ -8,7 +8,7 @@ export const metadata = {
   description: changelogHeadLine,
 }
 
-export default function Changelog() {
+export default function ChangelogPage() {
   return (
     <SimpleLayout title={changelogHeadLine} intro={changelogIntro}>
       <div className="space-y-20">

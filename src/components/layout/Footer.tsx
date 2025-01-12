@@ -6,7 +6,7 @@ import { ThemeToggle } from '@/components/shared/ThemeToggle'
 import { name } from '@/config/infoConfig'
 import SocialLinks from '@/components/home/SocialLinks'
 import VisitData from '@/components/layout/VisitData'
-
+import { useLocale } from 'next-intl'
 
 function NavLink({
   href,
@@ -16,10 +16,7 @@ function NavLink({
   children: React.ReactNode
 }) {
   return (
-    <Link
-      href={href}
-      className="transition hover:text-primary"
-    >
+    <Link href={href} className="transition hover:text-primary">
       {children}
     </Link>
   )
@@ -33,18 +30,21 @@ export function Footer() {
           <ContainerInner>
             <div className="flex flex-col items-center justify-between gap-6 sm:flex-row sm:items-start">
               <div className="flex flex-wrap justify-center gap-x-6 gap-y-1 text-sm font-medium">
-                {footerItems.map((item) => (
-                  <NavLink key={item.name} href={item.href}>{item.name}</NavLink>
+                {footerItems[useLocale()].map((item: any) => (
+                  <NavLink key={item.name} href={item.href}>
+                    {item.name}
+                  </NavLink>
                 ))}
               </div>
-              <div className='flex flex-col justify-center items-start'>
-                <div className='flex flex-row justify-end items-center gap-2'>
+              <div className="flex flex-col items-start justify-center">
+                <div className="flex flex-row items-center justify-end gap-2">
                   <p className="text-sm text-muted-foreground">
-                    &copy; {new Date().getFullYear()} {name}. All rights reserved.
+                    &copy; {new Date().getFullYear()} {name}. All rights
+                    reserved.
                   </p>
                   <ThemeToggle />
                 </div>
-                <SocialLinks className='mt-0'/>
+                <SocialLinks className="mt-0" />
                 <VisitData />
               </div>
             </div>

@@ -1,0 +1,61 @@
+{
+  "LocaleSwitcher": {
+    "cn": "中文",
+    "en": "英文",
+    "label": "语言"
+  },
+  "personal": {
+    "name": "GeGarron",
+    "headline": "软件工程师、AI全栈 Web 开发者、独立开发者。",
+    "introduction": "我是Garron，一名软件工程师。喜欢编程，喜欢新的技术，喜欢构建有趣的东西。",
+    "email": "gejialun88@gmail.com",
+    "githubUsername": "geallenboy",
+    "sourceCode": "源码",
+    "company": "公司",
+    "titel": "标题",
+    "date": "日期"
+  },
+  "about": {
+    "aboutMeHeadline": "我是GeGarron, 一名软件工程师。"
+  },
+  "project": {
+    "projectHeadLine": "我曾做过的事和我正在做的事.",
+    "projectIntro": "我参与过各种类型的项目，从简单的网站到复杂的网页应用程序，其中许多是开源的。以下是我最喜欢的一些项目。"
+  },
+  "blog": {
+    "blogHeadLine": "我在思考的事情",
+    "blogIntro": "我写了一些关于AI、编程和生活的内容.",
+    "title1": "订阅我的文章",
+    "title2": "欢迎订阅我的文章",
+    "title3": "订阅",
+    "title4": "阅读文章"
+  },
+  "changelog": {
+    "changelogHeadLine": "这个网站的新内容",
+    "changelogIntro": "查看本站的最新更新。"
+  },
+  "friends": {
+    "friendsHeadLine": "garron的朋友",
+    "friendsIntro": "结识一些有趣的朋友。",
+    "friendsList": [
+      {
+        "name": "GeGarron",
+        "link": { "href": "https://gegarron.com" }
+      }
+    ]
+  },
+  "education": {
+    "school": "非传统学校",
+    "major": "计算机科学与技术",
+    "logo": "学院",
+    "start": "2012",
+    "end": "2016"
+  },
+  "career": {
+    "company": "AIing",
+    "title": "软件工程师",
+    "logo": "电商",
+    "start": "2016",
+    "end": "2024"
+  }
+}

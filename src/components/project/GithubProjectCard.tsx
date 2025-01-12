@@ -1,15 +1,7 @@
 'use client'
 
-import { ArrowRightIcon, HashIcon } from 'lucide-react'
-import {
-  ArrowRight,
-  GitFork,
-  Star,
-  GithubLogo,
-  BookOpen,
-} from '@phosphor-icons/react'
+import { ArrowRight, GitFork, Star, BookOpen } from '@phosphor-icons/react'
 import { ProjectItemType } from '@/config/infoConfig'
-
 import Link from 'next/link'
 
 export function GithubProjectCard({
@@ -21,7 +13,7 @@ export function GithubProjectCard({
 }) {
   let Component = titleAs ?? 'h2'
   return (
-    <li className="group relative flex h-full flex-col items-start">
+    <div className="group relative flex h-full flex-col items-start">
       <div className="relative flex h-full w-full flex-col justify-between rounded-2xl  border border-muted-foreground/20 px-6 py-5 shadow-sm transition-all group-hover:scale-[1.03] group-hover:bg-muted/5 group-hover:shadow-md">
         <div className="">
           <div className="flex flex-col items-start justify-center gap-2 sm:flex-row sm:items-center sm:justify-start">
@@ -64,6 +56,6 @@ export function GithubProjectCard({
           />
         </Link>
       </div>
-    </li>
+    </div>
   )
 }

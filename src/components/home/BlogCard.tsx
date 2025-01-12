@@ -1,6 +1,7 @@
 import { Card } from '@/components/shared/Card'
 import { formatDate } from '@/lib/formatDate'
 import { type BlogType } from '@/lib/blogs'
+import { useTranslations } from 'next-intl'
 
 export function BlogCard({
   blog,
@@ -10,6 +11,7 @@ export function BlogCard({
   titleAs?: keyof JSX.IntrinsicElements
 }) {
   const as = titleAs ?? 'h2'
+  const blogs = useTranslations('blog')
   return (
     <Card as="article">
       <Card.Title as={as} href={`/blogs/${blog.slug}`}>
@@ -19,7 +21,7 @@ export function BlogCard({
         {formatDate(blog.date)}
       </Card.Eyebrow>
       <Card.Description>{blog.description}</Card.Description>
-      <Card.Cta>阅读文章</Card.Cta>
+      <Card.Cta>{blogs('title4')}</Card.Cta>
     </Card>
   )
 }

@@ -5,11 +5,13 @@ import { Rss, Copy, ClipboardText } from '@phosphor-icons/react'
 import { Check } from 'lucide-react'
 import { useState } from 'react'
 import { cn } from '@/lib/utils'
+import { useTranslations } from 'next-intl'
 
 export default function Feed() {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL
   const feedUrl = `${siteUrl}/feed`
   const [copied, setCopied] = useState(false)
+  const blog = useTranslations('blog')
 
   const handleCopy = async () => {
     try {
@@ -25,10 +27,10 @@ export default function Feed() {
     <div className="rounded-2xl border border-muted p-6 shadow-sm">
       <h2 className="flex text-sm font-semibold">
         <Rss size={26} weight="duotone" />
-        <span className="ml-3">订阅我的文章</span>
+        <span className="ml-3">{blog('title1')}</span>
       </h2>
       <p className="ml-1 mt-4 text-sm text-muted-foreground">
-        欢迎订阅我的文章
+        {blog('title2')}
       </p>
       <div className="mt-4 flex gap-4">
         <div className="relative flex-auto">
@@ -58,7 +60,7 @@ export default function Feed() {
           onClick={() => window.open(feedUrl, '_blank')}
           className="hidden flex-none bg-primary text-primary-foreground md:block"
         >
-          订阅
+          {blog('title3')}
         </Button>
       </div>
     </div>

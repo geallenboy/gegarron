@@ -5,8 +5,11 @@ import { utm_source } from '@/config/siteConfig'
 import Link from 'next/link'
 import { CustomIcon } from '@/components/shared/CustomIcon'
 import { cn } from '@/lib/utils'
+import { useTranslations } from 'next-intl'
 
 export default function SocialLinks({ className }: { className?: string }) {
+  // const t = useTranslations("")
+  // console.log(t('title'))
   return (
     <div className={cn('mt-6 flex items-center', className)}>
       {socialLinks.map((link) => (
@@ -30,7 +33,7 @@ export default function SocialLinks({ className }: { className?: string }) {
         className="inline-flex h-10 w-10 items-center justify-center rounded-md hover:bg-accent hover:text-accent-foreground"
       >
         <CustomIcon name="email" />
-        <span className="sr-only">邮箱</span>
+        <span className="sr-only">email</span>
       </Link>
     </div>
   )

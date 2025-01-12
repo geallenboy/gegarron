@@ -1,16 +1,17 @@
 'use client'
 
-import { Fragment, useEffect, useRef, useState } from 'react'
+import { Fragment, useEffect, useRef } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { Popover, Transition } from '@headlessui/react'
 import clsx from 'clsx'
-
+import { useLocale } from 'next-intl'
 import { Container } from '@/components/layout/Container'
 import avatarImage from '@/images/avatar.png'
 import { navItems } from '@/config/siteConfig'
 import { ThemeToggle } from '@/components/shared/ThemeToggle'
+import { ChooseLocale } from '@/components/shared/ChooseLocale'
 import { GithubRepo } from '@/components/shared/GithubRepo'
 import { name } from '@/config/infoConfig'
 import { ChevronDownIcon, XIcon } from 'lucide-react'
@@ -77,7 +78,7 @@ function MobileNavigation(
             </div>
             <nav className="mt-6">
               <ul className="-my-2 divide-y divide-zinc-100 text-base dark:divide-zinc-100/5">
-                {navItems.map((item) => (
+                {navItems[useLocale()].map((item: any) => (
                   <MobileNavItem key={item.name} href={item.href}>
                     {item.name}
                   </MobileNavItem>
@@ -124,8 +125,8 @@ function DesktopNavigation(props: React.ComponentPropsWithoutRef<'nav'>) {
   return (
     <nav {...props}>
       <ul className="flex rounded-full bg-card px-3 text-sm font-medium shadow-md ring-1 ring-muted backdrop-blur">
-        {navItems.map((item, index) => (
-          <Fragment key={item.name}>
+        {navItems[useLocale()].map((item: any, index: number) => (
+          <Fragment key={item.name + index + 1}>
             {index > 0 && (
               <li className="flex items-center">
                 <div className="h-4 w-px bg-muted-foreground/30" />
@@ -404,7 +405,9 @@ export function Header() {
               </div>
               <div className="flex justify-end md:flex-1">
                 <div className="pointer-events-auto flex flex-row items-center gap-2 md:mr-2">
+                  <ChooseLocale />
                   <ThemeToggle />
+
                   <GithubRepo />
                 </div>
               </div>

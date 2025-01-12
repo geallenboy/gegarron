@@ -4,7 +4,6 @@ import { HashIcon } from 'lucide-react'
 import Image from 'next/image'
 import { ArrowUpRight } from '@phosphor-icons/react'
 import { ProjectItemType } from '@/config/infoConfig'
-import { utm_source } from '@/config/siteConfig'
 import Link from 'next/link'
 
 export function ProjectCard({
@@ -14,19 +13,15 @@ export function ProjectCard({
   project: ProjectItemType
   titleAs?: keyof JSX.IntrinsicElements
 }) {
-  const utmLink = `https://${project.link.href}?utm_source=${utm_source}`
   let Component = titleAs ?? 'h2'
   return (
-    <li className="group relative flex h-full flex-col items-start">
+    <div className="group relative flex h-full flex-col items-start">
       <div className="relative flex h-full w-full flex-col justify-between rounded-2xl border border-muted-foreground/20 p-4 shadow-sm transition-all group-hover:scale-[1.03] group-hover:bg-muted/5 group-hover:shadow-md">
         <div className="">
           <div className="flex flex-col items-start justify-center gap-4 sm:flex-row sm:items-center sm:justify-start">
             <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full">
               <Image
-                src={
-                  project.logo ??
-                  `https://www.google.com/s2/favicons?domain=${project.link.href}&sz=32`
-                }
+                src={project.logo ?? project.link.href}
                 alt={`${project.name} favicon`}
                 width={36}
                 height={36}
@@ -48,7 +43,7 @@ export function ProjectCard({
             <div className="flex flex-wrap items-center gap-x-2">
               {project.tags.map((tag, index) => (
                 <div
-                  key={index}
+                  key={index + 1}
                   className="group flex items-center justify-center space-x-0.5"
                 >
                   <HashIcon className="icon-scale h-3 w-3 text-muted-foreground" />
@@ -73,6 +68,6 @@ export function ProjectCard({
           />
         </Link>
       </div>
-    </li>
+    </div>
   )
 }
