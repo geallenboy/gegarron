@@ -462,7 +462,7 @@ export const changelogList: any = {
   ]
 }
 
-export const aboutParagraphs = {
+export const aboutParagraphs: any = {
   en: [
     "I am passionate about programming. With 10 years of front-end development experience, I am currently focused on the development and exploration of AI applications, dedicated to integrating artificial intelligence technology with real-world scenarios to create innovative and efficient solutions.",
     "I have many hobbies, such as fitness, watching movies, listening to music, traveling, and more."

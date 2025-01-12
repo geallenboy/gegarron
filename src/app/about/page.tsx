@@ -1,10 +1,10 @@
 import { type Metadata } from 'next'
 import Image from 'next/image'
-import { aboutMeHeadline, aboutParagraphs } from '@/config/infoConfig'
+import { aboutParagraphs } from '@/config/infoConfig'
 import { Container } from '@/components/layout/Container'
 import portraitImage from '@/images/portrait.png'
 import SocialLinks from '@/components/about/SocialLinks'
-import { useTranslations } from 'next-intl'
+import { useLocale, useTranslations } from 'next-intl'
 
 export const metadata: Metadata = {
   title: '关于',
@@ -12,7 +12,8 @@ export const metadata: Metadata = {
 }
 
 export default function AboutPage() {
-  const blog = useTranslations('blog')
+  const about = useTranslations('about')
+  const locale = useLocale()
 
   return (
     <Container className="mt-16 sm:mt-32">
@@ -29,11 +30,11 @@ export default function AboutPage() {
         </div>
         <div className="lg:order-first lg:row-span-2">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-            {blog('aboutMeHeadline')}
+            {about('aboutMeHeadline')}
           </h1>
           <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
-            {aboutParagraphs['en'].map((paragraph, index) => (
-              <p key={index}>{paragraph}</p>
+            {aboutParagraphs[locale].map((item: any, index: number) => (
+              <p key={index}>{item}</p>
             ))}
           </div>
         </div>

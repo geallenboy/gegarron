@@ -41,7 +41,7 @@ export default function ProjectsPage() {
           role="list"
           className="grid grid-cols-1 gap-x-8 gap-y-12 sm:grid-cols-2 md:grid-cols-3"
         >
-          {githubProjectsList['en'].map((project: any) => (
+          {githubProjectsList[useLocale()].map((project: any) => (
             <GithubProjectCard
               key={project.name}
               project={project}
