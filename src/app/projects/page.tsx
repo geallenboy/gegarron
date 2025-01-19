@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   description: 'AI Image| AI Logo | AI Code | AI...',
 }
 
-export const ProjectsPage = () => {
+const ProjectsPage = () => {
   const projectT = useTranslations('project')
   const personalT = useTranslations('personal')
   return (

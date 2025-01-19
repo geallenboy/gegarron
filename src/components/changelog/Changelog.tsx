@@ -45,7 +45,7 @@ function ChangelogItem({
   )
 }
 
-export default function ChangelogBlock() {
+const ChangelogBlock = () => {
   const locale = useLocale()
   return (
     <>
@@ -65,3 +65,5 @@ export default function ChangelogBlock() {
     </>
   )
 }
+
+export default ChangelogBlock

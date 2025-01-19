@@ -8,7 +8,7 @@ export const metadata = {
   description: '网站日志',
 }
 
-export const ChangelogPage = () => {
+const ChangelogPage = () => {
   const changelogT = useTranslations('changelog')
 
   return (

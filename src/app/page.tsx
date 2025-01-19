@@ -16,7 +16,7 @@ import IconCloud from '@/components/layout/IconCloud'
 import { useLocale, useTranslations } from 'next-intl'
 import BlogList from '@/components/home/BlogList'
 
-export const HomePage = () => {
+const HomePage = () => {
   const locale = useLocale()
   const personal = useTranslations('personal')
   const project = useTranslations('project')

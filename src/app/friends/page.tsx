@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   description: 'garron 朋友',
 }
 
-export const FriendsPage = () => {
+const FriendsPage = () => {
   const friendsT = useTranslations('friends')
   return (
     <SimpleLayout

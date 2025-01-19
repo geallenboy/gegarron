@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   description: '我是garron,AI 全栈工程师,AI Agrent开发',
 }
 
-export const AboutPage = () => {
+const AboutPage = () => {
   const about = useTranslations('about')
   const locale = useLocale()
 

@@ -4,7 +4,7 @@ import { promises as fs } from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
 
-export const GET = async (req: Request) => {
+export async function GET(req: Request) {
   let siteUrl = process.env.NEXT_PUBLIC_SITE_URL
 
   if (!siteUrl) {
@@ -59,4 +59,4 @@ export const GET = async (req: Request) => {
     },
   })
 }
-export default GET
+

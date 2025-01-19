@@ -29,7 +29,7 @@ export const generateMetadata = async ({
   }
 }
 
-export const BlogPage = async ({ params }: Props) => {
+const BlogPage = async ({ params }: Props) => {
   const blog = await getBlogBySlug(params.slug)
 
   if (!blog) {

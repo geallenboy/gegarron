@@ -33,7 +33,7 @@ const Blog = ({ blog }: { blog: BlogType }) => {
     </article>
   )
 }
-export const BlogSimple = ({ children }: { children?: React.ReactNode }) => {
+const BlogSimple = ({ children }: { children?: React.ReactNode }) => {
   const blogT = useTranslations('blog')
   return (
     <SimpleLayout title={blogT('blogHeadLine')} intro={blogT('blogIntro')}>
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
   description: '我写了一些关于AI、编程和生活的内容.',
 }
 
-export const BlogsPage = async () => {
+const BlogsPage = async () => {
   let blogs = await getAllBlogs()
   return (
     <BlogSimple>
