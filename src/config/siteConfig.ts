@@ -2,11 +2,6 @@
 export const utm_source = process.env.NEXT_PUBLIC_UTM_SOURCE
 
 
-// navigation config
-type NavItemType = {
-  name: string
-  href: string
-}
 //Array<NavItemType>
 export const footerItems: any = {
   en: [
@@ -35,7 +30,7 @@ export const footerItems: any = {
       "href": "/changelog"
     }
   ],
-  cn: [
+  zh: [
     {
       name: '首页',
       href: '/'
@@ -82,7 +77,7 @@ export const navItems: any = {
       href: '/blogs'
     }
   ],
-  cn: [
+  zh: [
     {
       name: '首页',
       href: '/'

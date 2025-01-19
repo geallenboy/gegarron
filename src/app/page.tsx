@@ -16,7 +16,7 @@ import IconCloud from '@/components/layout/IconCloud'
 import { useLocale, useTranslations } from 'next-intl'
 import BlogList from '@/components/home/BlogList'
 
-export default function HomePage() {
+export const HomePage = () => {
   const locale = useLocale()
   const personal = useTranslations('personal')
   const project = useTranslations('project')
@@ -35,7 +35,7 @@ export default function HomePage() {
             </p>
             <SocialLinks className="md:mt-24" />
           </div>
-          <div className="relative ml-auto flex size-full w-full items-center justify-center overflow-hidden md:mr-8 ">
+          <div className="relative ml-auto flex size-full w-full items-center justify-center overflow-hidden md:mr-8">
             <IconCloud />
           </div>
         </div>
@@ -102,3 +102,5 @@ export default function HomePage() {
     </>
   )
 }
+
+export default HomePage

@@ -4,13 +4,13 @@ import { ArrowRight, GitFork, Star, BookOpen } from '@phosphor-icons/react'
 import { ProjectItemType } from '@/config/infoConfig'
 import Link from 'next/link'
 
-export function GithubProjectCard({
+export const GithubProjectCard = ({
   project,
   titleAs,
 }: {
   project: ProjectItemType
   titleAs?: keyof JSX.IntrinsicElements
-}) {
+}) => {
   let Component = titleAs ?? 'h2'
   return (
     <div className="group relative flex h-full flex-col items-start">
@@ -29,7 +29,7 @@ export function GithubProjectCard({
 
         <div className="relative z-10 mt-auto pt-4">
           <div className="flex flex-row items-center gap-2 text-xs font-semibold opacity-80">
-            {project.gitStars && (
+            {/* {project.gitStars && (
               <>
                 <Star size={16} weight="duotone" />
                 {project.gitStars}
@@ -40,7 +40,7 @@ export function GithubProjectCard({
                 <GitFork size={16} weight="duotone" />
                 {project.gitForks}
               </>
-            )}
+            )} */}
           </div>
         </div>
         <Link

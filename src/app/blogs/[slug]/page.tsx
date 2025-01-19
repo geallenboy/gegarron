@@ -13,7 +13,9 @@ interface Props {
   }
 }
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export const generateMetadata = async ({
+  params,
+}: Props): Promise<Metadata> => {
   const blog = await getBlogBySlug(params.slug)
   if (!blog) {
     return {
@@ -27,9 +29,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 }
 
-export default async function BlogPage({ params }: Props) {
+export const BlogPage = async ({ params }: Props) => {
   const blog = await getBlogBySlug(params.slug)
-  
+
   if (!blog) {
     notFound()
   }
@@ -37,12 +39,10 @@ export default async function BlogPage({ params }: Props) {
   const content = await getMDXContent(params.slug)
 
   return (
-    <BlogLayout
-        blog={blog}
-    >
-      <div className="mt-8 prose dark:prose-invert">
-        {content}
-      </div>
+    <BlogLayout blog={blog}>
+      <div className="prose dark:prose-invert mt-8">{content}</div>
     </BlogLayout>
   )
 }
+
+export default BlogPage

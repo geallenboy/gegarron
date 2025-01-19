@@ -6,13 +6,13 @@ import { ArrowUpRight } from '@phosphor-icons/react'
 import { ProjectItemType } from '@/config/infoConfig'
 import Link from 'next/link'
 
-export function ProjectCard({
+export const ProjectCard = ({
   project,
   titleAs,
 }: {
   project: ProjectItemType
   titleAs?: keyof JSX.IntrinsicElements
-}) {
+}) => {
   let Component = titleAs ?? 'h2'
   return (
     <div className="group relative flex h-full flex-col items-start">

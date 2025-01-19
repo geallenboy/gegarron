@@ -4,8 +4,9 @@ import Link from 'next/link'
 import { socialLinks } from '@/config/infoConfig'
 import { CustomIcon } from '@/components/shared/CustomIcon'
 import { useTranslations } from 'next-intl'
+import { Label } from '../ui/label'
 
-export default function SocialLinks() {
+export const SocialLinks = () => {
   const t = useTranslations('personal')
 
   return (
@@ -33,7 +34,13 @@ export default function SocialLinks() {
           <CustomIcon name="email" size={22} />
           <span className="ml-4">{t('email')}</span>
         </Link>
+        <Label className="text-md group ml-3 flex flex-row items-center justify-start font-medium transition hover:text-teal-500 dark:text-zinc-200 dark:hover:text-teal-500">
+          <CustomIcon name="wechat" size={22} />
+          <span className="ml-4">gegarron</span>
+        </Label>
       </div>
     </div>
   )
 }
+
+export default SocialLinks

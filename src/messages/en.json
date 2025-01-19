@@ -1,13 +1,13 @@
 {
   "LocaleSwitcher": {
-    "cn": "China",
+    "zh": "China",
     "en": "English",
     "label": "Language"
   },
   "personal": {
     "name": "GeGarron",
-    "headline": "Software Engineer, Full-stack AI Web Developer, Independent Developer.",
-    "introduction": "I am Garron, a software engineer. I love programming, new technologies, and building interesting things.",
+    "headline": "AI Full-Stack Engineer | Independent Developer",
+    "introduction": "Hello, I'm GeGarron, an AI Full-Stack Engineer and Independent Developer.",
     "email": "gejialun88@gmail.com",
     "githubUsername": "geallenboy",
     "sourceCode": "sourceCode",
@@ -17,7 +17,7 @@
   },
 
   "about": {
-    "aboutMeHeadline": "I am GeGarron, a software engineer."
+    "aboutMeHeadline": "Hello, I'm GeGarron, an AI Full-Stack Engineer and Independent Developer. "
   },
   "project": {
     "projectHeadLine": "Things I've done and things I'm doing.",
@@ -53,7 +53,7 @@
     "end": "2016"
   },
   "career": {
-    "company": "AIing",
+    "company": "AI",
     "title": "Software Engineer",
     "logo": "E-commerce",
     "start": "2016",

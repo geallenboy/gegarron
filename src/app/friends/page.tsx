@@ -1,18 +1,23 @@
 import { type Metadata } from 'next'
 import { SimpleLayout } from '@/components/layout/SimpleLayout'
 
-import { friendsHeadLine, friendsIntro, friends } from '@/config/infoConfig'
+import { friends } from '@/config/infoConfig'
 
 import { FriendCard } from '@/components/friends/FriendCard'
+import { useTranslations } from 'next-intl'
 
 export const metadata: Metadata = {
   title: 'garron的朋友',
-  description: friendsHeadLine,
+  description: 'garron 朋友',
 }
 
-export default function FriendsPage() {
+export const FriendsPage = () => {
+  const friendsT = useTranslations('friends')
   return (
-    <SimpleLayout title={friendsHeadLine} intro={friendsIntro}>
+    <SimpleLayout
+      title={friendsT('friendsHeadLine')}
+      intro={friendsT('friendsIntro')}
+    >
       <ul
         role="list"
         className="grid grid-cols-1 gap-x-8 gap-y-12 pb-10 sm:grid-cols-2 lg:grid-cols-3"
@@ -24,3 +29,4 @@ export default function FriendsPage() {
     </SimpleLayout>
   )
 }
+export default FriendsPage

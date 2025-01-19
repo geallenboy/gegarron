@@ -1,26 +1,27 @@
 'use client'
 
+import { useTranslations } from 'next-intl'
 import GitHubCalendar from 'react-github-calendar'
-import { githubUsername } from '@/config/infoConfig'
 
+export const GithubContributions = () => {
+  const personalT = useTranslations('personal')
 
-export default function GithubContributions() {
   return (
     <div className="w-full overflow-hidden">
-      <div className='dark:hidden'>
+      <div className="dark:hidden">
         <GitHubCalendar
-          username={githubUsername}
-          colorScheme='light'
+          username={personalT('githubUsername')}
+          colorScheme="light"
           fontSize={12}
           blockSize={12}
           blockMargin={5}
           blockRadius={4}
         />
       </div>
-      <div className='hidden dark:block'>
+      <div className="hidden dark:block">
         <GitHubCalendar
-          username={githubUsername}
-          colorScheme='dark'
+          username={personalT('githubUsername')}
+          colorScheme="dark"
           fontSize={12}
           blockSize={12}
           blockMargin={5}
@@ -30,3 +31,5 @@ export default function GithubContributions() {
     </div>
   )
 }
+
+export default GithubContributions

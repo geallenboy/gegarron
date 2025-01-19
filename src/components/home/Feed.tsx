@@ -7,7 +7,7 @@ import { useState } from 'react'
 import { cn } from '@/lib/utils'
 import { useTranslations } from 'next-intl'
 
-export default function Feed() {
+export const Feed = () => {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL
   const feedUrl = `${siteUrl}/feed`
   const [copied, setCopied] = useState(false)
@@ -66,3 +66,5 @@ export default function Feed() {
     </div>
   )
 }
+
+export default Feed

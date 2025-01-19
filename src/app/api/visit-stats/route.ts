@@ -42,13 +42,11 @@ export async function GET() {
       },
     });
 
-    // console.log('todayResponse: ', todayResponse)
     if (!todayResponse.ok) {
       throw new Error('Failed to fetch visit stats');
     }
 
     const todayData = await todayResponse.json();
-    // console.log('todayData: ', todayData)
     const dailyUV = todayData?.meta?.totalCount;
 
     return NextResponse.json({
@@ -56,7 +54,6 @@ export async function GET() {
       dailyUV,
     });
   } catch (error) {
-    // console.error('Error fetching visit stats:', error);
     return NextResponse.json(
       { error: 'Failed to fetch visit stats' },
       { status: 500 }

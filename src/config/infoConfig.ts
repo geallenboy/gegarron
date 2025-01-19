@@ -1,33 +1,7 @@
 
 // personal info
 export const name = 'GeGarron'
-export const headline = '软件工程师、AI全栈 Web 开发者、独立开发者。'
-export const introduction = '我是Garron，一名软件工程师。喜欢编程，喜欢新的技术，喜欢构建有趣的东西。'
 export const email = 'gejialun88@gmail.com'
-export const githubUsername = 'geallenboy'
-
-// about page
-export const aboutMeHeadline = "我是GeGarron, 一名软件工程师。"
-
-
-// projects
-export const projectHeadLine = "我曾做过的事和我正在做的事."
-export const projectIntro = "我参与过各种类型的项目，从简单的网站到复杂的网页应用程序，其中许多是开源的。以下是我最喜欢的一些项目。"
-
-
-// blog
-export const blogHeadLine = "我在思考的事情"
-export const blogIntro = "我写了一些关于AI、编程和生活的内容."
-
-// changelog
-export const changelogHeadLine = "这个网站的新内容"
-export const changelogIntro = "查看本站的最新更新。"
-
-
-// friends
-export const friendsHeadLine = "garron的朋友"
-export const friendsIntro = "结识一些有趣的朋友。"
-
 // social links
 export type SocialLinkType = {
   name: string,
@@ -77,7 +51,7 @@ export const educationList: any = {
       "end": "2016"
     },
   ],
-  cn: [
+  zh: [
     {
       school: '非传统学校',
       major: '计算机科学与技术',
@@ -110,12 +84,12 @@ export const careerList: any = {
       "end": "2024"
     }
   ],
-  cn: [
+  zh: [
     {
-      company: 'AIing',
+      company: 'AI',
       title: '软件工程师',
       logo: '电商',
-      start: '2016',
+      start: '2011',
       end: '2024'
     },
   ]
@@ -135,49 +109,6 @@ export type ProjectItemType = {
   gitForks?: number
 }
 
-// projects 
-export const projects: Array<ProjectItemType> = [
-  {
-    name: 'AI Image',
-    description: 'AI 生成图片,自定义模型训练',
-    link: { href: 'https://github.com/geallenboy/image-ai', label: 'AI Image' },
-    logo: '/images/icon/aibesttools.png',
-    category: ['网站'],
-    techStack: ['Next.js', 'TailwindCSS', 'Shadcn/UI'],
-    tags: ['AI', 'Image']
-  },
-  {
-    name: 'AI Logo',
-    description: '您的终极目录合集。',
-    link: { href: 'https://github.com/geallenboy/logo-ai', label: 'AI Logo' },
-    logo: '/images/icon/bestdirectories.png',
-    category: ['网站'],
-    techStack: ['Next.js', 'TailwindCSS', 'Shadcn/UI'],
-    tags: ['目录合集']
-  },
-  {
-    name: 'wiper',
-    description: '最好用的自定义画板工具',
-    link: { href: 'https://github.com/geallenboy/wiper', label: 'wiper' },
-    logo: '/images/icon/usergrowth.ico',
-    category: ['网站'],
-    techStack: ['Next.js', 'TailwindCSS', 'Shadcn/UI'],
-    tags: ['画板', '', 'SEO']
-  },
-  {
-    name: 'AI故事魔法师',
-    description: 'AI 故事生成',
-    link: { href: 'https://github.com/geallenboy/ai-story-wizard', label: 'ai story wizard' },
-    logo: '/images/icon/devtoolset.png',
-    category: ['网站'],
-    techStack: ['Next.js', 'TailwindCSS', 'Shadcn/UI'],
-    tags: ['AI故事', '生成式AI']
-  },
-
-]
-
-
-
 
 // changelog
 export type ChangelogItemType = {
@@ -187,33 +118,6 @@ export type ChangelogItemType = {
     description: string
   }]
 }
-
-
-// https://simpleicons.org/
-export const techIcons = [
-  "typescript",
-  "javascript",
-  "supabase",
-  "cloudflare",
-  "java",
-  "mysql",
-  "react",
-  "nodedotjs",
-  "nextdotjs",
-  "prisma",
-  "postgresql",
-  "nginx",
-  "vercel",
-  "docker",
-  "git",
-  "github",
-  "visualstudiocode",
-  "androidstudio",
-  "rn",
-  "apple",
-  "wechat"
-];
-
 
 // friends
 export type FriendItemType = {
@@ -234,102 +138,150 @@ export const friends: Array<FriendItemType> = [
 export const projectsList: any = {
   en: [
     {
-      "name": "AI Image",
-      "description": "AI-generated images, custom model training",
+      "name": "AIImage",
+      "description": "AI Image is an artificial intelligence-based image generation platform.",
       "link": {
-        "href": "https://github.com/geallenboy/image-ai",
+        "href": "https://aiimage.nextjsbase.site/",
         "label": "AI Image"
       },
-      "logo": "/images/icon/aibesttools.png",
-      "category": ["Website"],
-      "techStack": ["Next.js", "TailwindCSS", "Shadcn/UI"],
+      "logo": "/images/icon/devtoolset.png",
+      "category": ["网站", "AI Image"],
+      "techStack": ["Next.js", "TailwindCSS", "Shadcn/UI", "vercel"],
       "tags": ["AI", "Image"]
     },
     {
-      "name": "AI Logo",
-      "description": "Your ultimate directory collection.",
+      "name": "AILogo",
+      "description": "AI Logo is an innovative platform designed to generate customized logos using artificial intelligence.",
       "link": {
-        "href": "https://github.com/geallenboy/logo-ai",
-        "label": "AI Logo"
-      },
-      "logo": "/images/icon/bestdirectories.png",
-      "category": ["Website"],
-      "techStack": ["Next.js", "TailwindCSS", "Shadcn/UI"],
-      "tags": ["Directory Collection"]
-    },
-    {
-      "name": "wiper",
-      "description": "The best custom drawing board tool",
-      "link": {
-        "href": "https://github.com/geallenboy/wiper",
-        "label": "wiper"
-      },
-      "logo": "/images/icon/usergrowth.ico",
-      "category": ["Website"],
-      "techStack": ["Next.js", "TailwindCSS", "Shadcn/UI"],
-      "tags": ["Drawing Board", "", "SEO"]
-    },
-    {
-      "name": "AI Story Wizard",
-      "description": "AI story generation",
-      "link": {
-        "href": "https://github.com/geallenboy/ai-story-wizard",
-        "label": "AI Story Wizard"
+        "href": "https://ailogo.nextjsbase.site/",
+        "label": "ai logo"
       },
       "logo": "/images/icon/devtoolset.png",
-      "category": ["Website"],
+      "category": ["网站"],
       "techStack": ["Next.js", "TailwindCSS", "Shadcn/UI"],
-      "tags": ["AI Story", "Generative AI"]
+      "tags": ["AILogo"]
+    },
+    {
+      "name": "AICode",
+      "description": "AICode...",
+      "link": {
+        "href": "https://aicode.nextjsbase.site/",
+        "label": "ai code"
+      },
+      "logo": "/images/icon/devtoolset.png",
+      "category": ["网站"],
+      "techStack": ["Next.js", "TailwindCSS", "Shadcn/UI"],
+      "tags": ["AICode"]
+    },
+    {
+      "name": "AIPdf",
+      "description": "AIPdf...",
+      "link": {
+        "href": "https://aipdf.nextjsbase.site/",
+        "label": "ai pdf"
+      },
+      "logo": "/images/icon/devtoolset.png",
+      "category": ["网站"],
+      "techStack": ["Next.js", "TailwindCSS", "Shadcn/UI"],
+      "tags": ["AIPdf"]
+    },
+    {
+      "name": "AIVideo",
+      "description": "AIVideo...",
+      "link": {
+        "href": "https://aivideo.nextjsbase.site/",
+        "label": "ai video"
+      },
+      "logo": "/images/icon/devtoolset.png",
+      "category": ["网站"],
+      "techStack": ["Next.js", "TailwindCSS", "Shadcn/UI"],
+      "tags": ["AIVideo"]
+    },
+    {
+      "name": "AIResume",
+      "description": "AIResume...",
+      "link": {
+        "href": "https://airesume.nextjsbase.site/",
+        "label": "ai resume"
+      },
+      "logo": "/images/icon/devtoolset.png",
+      "category": ["网站"],
+      "techStack": ["Next.js", "TailwindCSS", "Shadcn/UI"],
+      "tags": ["AIResume"]
     }
   ],
-  cn: [
+  zh: [
     {
-      "name": "AI Image",
-      "description": "AI 生成图片,自定义模型训练",
+      "name": "AIImage",
+      "description": "AI Image 是一款基于人工智能的图像生成平台。",
       "link": {
-        "href": "https://github.com/geallenboy/image-ai",
+        "href": "https://aiimage.nextjsbase.site/",
         "label": "AI Image"
       },
-      "logo": "/images/icon/aibesttools.png",
-      "category": ["网站"],
-      "techStack": ["Next.js", "TailwindCSS", "Shadcn/UI"],
+      "logo": "/images/icon/devtoolset.png",
+      "category": ["网站", "AI Image"],
+      "techStack": ["Next.js", "TailwindCSS", "Shadcn/UI", "vercel"],
       "tags": ["AI", "Image"]
     },
     {
-      "name": "AI Logo",
-      "description": "您的终极目录合集。",
+      "name": "AILogo",
+      "description": "AI Logo 是一款创新平台，旨在利用人工智能生成定制化的 logo。",
       "link": {
-        "href": "https://github.com/geallenboy/logo-ai",
-        "label": "AI Logo"
-      },
-      "logo": "/images/icon/bestdirectories.png",
-      "category": ["网站"],
-      "techStack": ["Next.js", "TailwindCSS", "Shadcn/UI"],
-      "tags": ["目录合集"]
-    },
-    {
-      "name": "wiper",
-      "description": "最好用的自定义画板工具",
-      "link": {
-        "href": "https://github.com/geallenboy/wiper",
-        "label": "wiper"
-      },
-      "logo": "/images/icon/usergrowth.ico",
-      "category": ["网站"],
-      "techStack": ["Next.js", "TailwindCSS", "Shadcn/UI"],
-      "tags": ["画板", "", "SEO"]
-    },
-    {
-      "name": "AI故事魔法师",
-      "description": "AI 故事生成",
-      "link": {
-        "href": "https://github.com/geallenboy/ai-story-wizard",
-        "label": "ai story wizard"
+        "href": "https://ailogo.nextjsbase.site/",
+        "label": "ai logo"
       },
       "logo": "/images/icon/devtoolset.png",
       "category": ["网站"],
       "techStack": ["Next.js", "TailwindCSS", "Shadcn/UI"],
-      "tags": ["AI故事", "生成式AI"]
+      "tags": ["AILogo"]
+    },
+    {
+      "name": "AICode",
+      "description": "AICode...",
+      "link": {
+        "href": "https://aicode.nextjsbase.site/",
+        "label": "ai code"
+      },
+      "logo": "/images/icon/devtoolset.png",
+      "category": ["网站"],
+      "techStack": ["Next.js", "TailwindCSS", "Shadcn/UI"],
+      "tags": ["AICode"]
+    },
+    {
+      "name": "AIPdf",
+      "description": "AIPdf...",
+      "link": {
+        "href": "https://aipdf.nextjsbase.site/",
+        "label": "ai pdf"
+      },
+      "logo": "/images/icon/devtoolset.png",
+      "category": ["网站"],
+      "techStack": ["Next.js", "TailwindCSS", "Shadcn/UI"],
+      "tags": ["AIPdf"]
+    },
+    {
+      "name": "AIVideo",
+      "description": "AIVideo...",
+      "link": {
+        "href": "https://aivideo.nextjsbase.site/",
+        "label": "ai video"
+      },
+      "logo": "/images/icon/devtoolset.png",
+      "category": ["网站"],
+      "techStack": ["Next.js", "TailwindCSS", "Shadcn/UI"],
+      "tags": ["AIVideo"]
+    },
+    {
+      "name": "AIResume",
+      "description": "AIResume...",
+      "link": {
+        "href": "https://airesume.nextjsbase.site/",
+        "label": "ai resume"
+      },
+      "logo": "/images/icon/devtoolset.png",
+      "category": ["网站"],
+      "techStack": ["Next.js", "TailwindCSS", "Shadcn/UI"],
+      "tags": ["AIResume"]
     }
   ]
 }
@@ -337,66 +289,126 @@ export const projectsList: any = {
 export const githubProjectsList: any = {
   en: [
     {
-      "name": "landing-page",
-      "description": "Build a Next.js AI SaaS landing page | TailwindCSS, React, Typescript",
+      "name": "ai-image",
+      "description": "ai image",
       "link": {
-        "href": "https://github.com/geallenboy/landing-page",
-        "label": "landing page"
+        "href": "https://github.com/geallenboy/ai-image",
+        "label": "ai-image"
       },
       "gitStars": 0,
       "gitForks": 0
     },
     {
-      "name": "Awesome Indie Hacker Tools",
-      "description": "A collection of tech stacks and tools for independent/overseas development",
+      "name": "ai-logo",
+      "description": "ai logo",
       "link": {
-        "href": "https://github.com/geallenboy",
-        "label": "Awesome Indie Hacker Tools"
+        "href": "https://github.com/geallenboy/ai-logo",
+        "label": "ai-logo"
       },
       "gitStars": 0,
       "gitForks": 0
     },
     {
-      "name": "Awesome AI Directory",
-      "description": "A collection of AI resource tools",
+      "name": "ai-code",
+      "description": "ai code",
       "link": {
-        "href": "https://github.com/geallenboy",
-        "label": "Awesome AI Directory"
+        "href": "https://github.com/geallenboy/ai-code",
+        "label": "ai-code"
       },
-      "gitStars": 37,
-      "gitForks": 5
-    }
+      "gitStars": 0,
+      "gitForks": 0
+    },
+    {
+      "name": "ai-pdf",
+      "description": "ai pdf",
+      "link": {
+        "href": "https://github.com/geallenboy/ai-pdf",
+        "label": "ai-pdf"
+      },
+      "gitStars": 0,
+      "gitForks": 0
+    },
+    {
+      "name": "ai-video",
+      "description": "ai video",
+      "link": {
+        "href": "https://github.com/geallenboy/ai-video",
+        "label": "ai-video"
+      },
+      "gitStars": 0,
+      "gitForks": 0
+    },
+    {
+      "name": "ai-resume",
+      "description": "ai resume",
+      "link": {
+        "href": "https://github.com/geallenboy/ai-resume",
+        "label": "ai-resume"
+      },
+      "gitStars": 0,
+      "gitForks": 0
+    },
   ],
-  cn: [
+  zh: [
     {
-      "name": "landing-page",
-      "description": "构建一个 Next.js AI Saas 着陆页面｜TailwindCSS、React、Typescript",
+      "name": "ai-image",
+      "description": "ai image",
       "link": {
-        "href": "https://github.com/geallenboy/landing-page",
-        "label": "landing page"
+        "href": "https://github.com/geallenboy/ai-image",
+        "label": "ai-image"
       },
       "gitStars": 0,
       "gitForks": 0
     },
     {
-      "name": "独立开发者工具精选",
-      "description": "独立开发/出海开发相关技术栈及工具收录",
+      "name": "ai-logo",
+      "description": "ai logo",
       "link": {
-        "href": "https://github.com/geallenboy",
-        "label": "Awesome Indie Hacker Tools"
+        "href": "https://github.com/geallenboy/ai-logo",
+        "label": "ai-logo"
       },
       "gitStars": 0,
       "gitForks": 0
     },
     {
-      "name": "AI 资源工具导航",
-      "description": "AI 资源工具导航站收录",
+      "name": "ai-code",
+      "description": "ai code",
       "link": {
-        "href": "https://github.com/geallenboy",
-        "label": "Awesome AI Directory"
+        "href": "https://github.com/geallenboy/ai-code",
+        "label": "ai-code"
       },
-      "gitStars": 37,
-      "gitForks": 5
+      "gitStars": 0,
+      "gitForks": 0
+    },
+    {
+      "name": "ai-pdf",
+      "description": "ai pdf",
+      "link": {
+        "href": "https://github.com/geallenboy/ai-pdf",
+        "label": "ai-pdf"
+      },
+      "gitStars": 0,
+      "gitForks": 0
+    },
+    {
+      "name": "ai-video",
+      "description": "ai video",
+      "link": {
+        "href": "https://github.com/geallenboy/ai-video",
+        "label": "ai-video"
+      },
+      "gitStars": 0,
+      "gitForks": 0
+    },
+    {
+      "name": "ai-resume",
+      "description": "ai resume",
+      "link": {
+        "href": "https://github.com/geallenboy/ai-resume",
+        "label": "ai-resume"
+      },
+      "gitStars": 0,
+      "gitForks": 0
     }
   ]
 }
@@ -431,7 +443,7 @@ export const changelogList: any = {
       ]
     }
   ],
-  cn: [
+  zh: [
     {
       "date": "2025-1-6",
       "content": [
@@ -464,11 +476,11 @@ export const changelogList: any = {
 
 export const aboutParagraphs: any = {
   en: [
-    "I am passionate about programming. With 10 years of front-end development experience, I am currently focused on the development and exploration of AI applications, dedicated to integrating artificial intelligence technology with real-world scenarios to create innovative and efficient solutions.",
+    " With 10 years of front-end development experience, I am currently focused on the development and exploration of AI applications, dedicated to integrating artificial intelligence technology with real-world scenarios to create innovative and efficient solutions.",
     "I have many hobbies, such as fitness, watching movies, listening to music, traveling, and more."
   ],
-  cn: [
-    "我热爱编程。拥有10年前端编程经验、目前专注于AI应用的开发与探索，致力于将人工智能技术与实际场景相结合，打造创新、高效的解决方案。",
+  zh: [
+    "拥有10年前端编程经验、目前专注于AI应用的开发与探索，致力于将人工智能技术与实际场景相结合，打造创新、高效的解决方案。",
     "我有很多爱好、比如健身、看电影、听音乐、旅行等等。"
   ]
 }

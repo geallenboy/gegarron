@@ -1,13 +1,10 @@
-import assert from 'assert'
-import * as cheerio from 'cheerio'
 import { Feed } from 'feed'
 import { name, email } from '@/config/infoConfig'
-import { getBlogBySlug } from '@/lib/blogs'
 import { promises as fs } from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
 
-export async function GET(req: Request) {
+export const GET = async (req: Request) => {
   let siteUrl = process.env.NEXT_PUBLIC_SITE_URL
 
   if (!siteUrl) {
@@ -62,3 +59,4 @@ export async function GET(req: Request) {
     },
   })
 }
+export default GET

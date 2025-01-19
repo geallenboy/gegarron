@@ -4,15 +4,15 @@ import { getLocale, getMessages } from 'next-intl/server'
 import { Providers } from '@/app/providers'
 import { Layout } from '@/components/layout/Layout'
 import { Analytics } from '@/components/analytics/analytics'
-import { name, headline, introduction } from '@/config/infoConfig'
+import { name } from '@/config/infoConfig'
 import '@/styles/tailwind.css'
 
 export const metadata: Metadata = {
   title: {
     template: `%s - ${name}`,
-    default: `${name} - ${headline}`,
+    default: `AI全栈工程师｜独立开发者`,
   },
-  description: `${introduction}`,
+  description: `我是GeGarron，AI全栈工程师,独立开发者。`,
   alternates: {
     types: {
       'application/rss+xml': `${process.env.NEXT_PUBLIC_SITE_URL}/feed`,
@@ -20,11 +20,11 @@ export const metadata: Metadata = {
   },
 }
 
-export default async function RootLayout({
+export const RootLayout = async ({
   children,
 }: {
   children: React.ReactNode
-}) {
+}) => {
   const locale = await getLocale()
   const messages = await getMessages()
 
@@ -43,3 +43,5 @@ export default async function RootLayout({
     </html>
   )
 }
+
+export default RootLayout

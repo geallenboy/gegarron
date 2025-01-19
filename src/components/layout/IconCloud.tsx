@@ -16,10 +16,9 @@ import tailwindcss from '@/public/svg/tailwindcss.svg'
 import typescript from '@/public/svg/typescript.svg'
 import vercel from '@/public/svg/vercel.svg'
 
-
-export default function IconCloud() {
+export const IconCloud = () => {
   return (
-    <div className="relative flex h-full w-full flex-col items-center justify-center overflow-hidden">
+    <div className="relative flex h-[400px] w-full flex-col items-center justify-center overflow-hidden">
       <OrbitingCircles iconSize={40}>
         <Image src={git} alt="git" className="h-10 w-10 " />
         <Image src={cloudflare} alt="cloudflare" className="h-10 w-10 " />
@@ -42,3 +41,4 @@ export default function IconCloud() {
   )
 }
 
+export default IconCloud

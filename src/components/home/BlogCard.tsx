@@ -3,13 +3,13 @@ import { formatDate } from '@/lib/formatDate'
 import { type BlogType } from '@/lib/blogs'
 import { useTranslations } from 'next-intl'
 
-export function BlogCard({
+export const BlogCard = ({
   blog,
   titleAs,
 }: {
   blog: BlogType
   titleAs?: keyof JSX.IntrinsicElements
-}) {
+}) => {
   const as = titleAs ?? 'h2'
   const blogs = useTranslations('blog')
   return (

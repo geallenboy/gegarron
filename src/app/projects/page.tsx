@@ -2,8 +2,6 @@ import { type Metadata } from 'next'
 import { SimpleLayout } from '@/components/layout/SimpleLayout'
 
 import {
-  projectHeadLine,
-  projectIntro,
   projectsList,
   githubProjectsList,
   ProjectItemType,
@@ -15,13 +13,17 @@ import { CustomIcon } from '@/components/shared/CustomIcon'
 
 export const metadata: Metadata = {
   title: 'garron的项目',
-  description: projectHeadLine,
+  description: 'AI Image| AI Logo | AI Code | AI...',
 }
 
-export default function ProjectsPage() {
-  const personal = useTranslations('personal')
+export const ProjectsPage = () => {
+  const projectT = useTranslations('project')
+  const personalT = useTranslations('personal')
   return (
-    <SimpleLayout title={projectHeadLine} intro={projectIntro}>
+    <SimpleLayout
+      title={projectT('projectHeadLine')}
+      intro={projectT('projectIntro')}
+    >
       <ul
         role="list"
         className="grid grid-cols-1 gap-x-8 gap-y-12 pb-10 sm:grid-cols-2 lg:grid-cols-3"
@@ -35,7 +37,7 @@ export default function ProjectsPage() {
       <div className="mx-auto my-4 flex max-w-xl flex-col gap-6 border-t border-muted py-8 lg:max-w-none">
         <h2 className="mb-4 flex flex-row items-center justify-start gap-2 text-xl font-semibold tracking-tight opacity-80 md:text-3xl">
           <CustomIcon name="github" size={28} />
-          {personal('sourceCode')}
+          {personalT('sourceCode')}
         </h2>
         <ul
           role="list"
@@ -53,3 +55,5 @@ export default function ProjectsPage() {
     </SimpleLayout>
   )
 }
+
+export default ProjectsPage

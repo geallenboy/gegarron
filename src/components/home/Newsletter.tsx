@@ -5,7 +5,7 @@ import { Input } from '@/components/ui/input'
 
 import { EnvelopeSimple } from '@phosphor-icons/react'
 
-export default function Newsletter() {
+export default Newsletter = () => {
   return (
     <form action="/subscribe" className="rounded-2xl border border-muted p-6">
       <h2 className="flex text-sm font-semibold ">

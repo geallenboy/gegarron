@@ -1,14 +1,14 @@
 'use client'
 
-import { email, socialLinks } from '@/config/infoConfig'
+import { socialLinks } from '@/config/infoConfig'
 import { utm_source } from '@/config/siteConfig'
 import Link from 'next/link'
 import { CustomIcon } from '@/components/shared/CustomIcon'
 import { cn } from '@/lib/utils'
 import { useTranslations } from 'next-intl'
 
-export default function SocialLinks({ className }: { className?: string }) {
-  // const t = useTranslations("")
+export const SocialLinks = ({ className }: { className?: string }) => {
+  const personalT = useTranslations('personal')
   // console.log(t('title'))
   return (
     <div className={cn('mt-6 flex items-center', className)}>
@@ -26,7 +26,7 @@ export default function SocialLinks({ className }: { className?: string }) {
         </Link>
       ))}
       <Link
-        href={`mailto:${email}`}
+        href={`mailto:${personalT('email')}`}
         target="_blank"
         rel="noreferrer"
         aria-label="Email"
@@ -38,3 +38,5 @@ export default function SocialLinks({ className }: { className?: string }) {
     </div>
   )
 }
+
+export default SocialLinks

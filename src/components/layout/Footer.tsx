@@ -8,13 +8,13 @@ import SocialLinks from '@/components/home/SocialLinks'
 import VisitData from '@/components/layout/VisitData'
 import { useLocale } from 'next-intl'
 
-function NavLink({
+const NavLink = ({
   href,
   children,
 }: {
   href: string
   children: React.ReactNode
-}) {
+}) => {
   return (
     <Link href={href} className="transition hover:text-primary">
       {children}
@@ -22,7 +22,7 @@ function NavLink({
   )
 }
 
-export function Footer() {
+export const Footer = () => {
   return (
     <footer className="mt-32 flex-none">
       <ContainerOuter>

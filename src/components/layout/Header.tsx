@@ -8,7 +8,7 @@ import { Popover, Transition } from '@headlessui/react'
 import clsx from 'clsx'
 import { useLocale } from 'next-intl'
 import { Container } from '@/components/layout/Container'
-import avatarImage from '@/images/avatar.png'
+import avatarImage from '@/images/avatar.jpeg'
 import { navItems } from '@/config/siteConfig'
 import { ThemeToggle } from '@/components/shared/ThemeToggle'
 import { ChooseLocale } from '@/components/shared/ChooseLocale'
@@ -18,13 +18,13 @@ import { ChevronDownIcon, XIcon } from 'lucide-react'
 
 import TypingAnimation from '@/components/ui/typing-animation'
 
-function MobileNavItem({
+const MobileNavItem = ({
   href,
   children,
 }: {
   href: string
   children: React.ReactNode
-}) {
+}) => {
   return (
     <li>
       <Popover.Button as={Link} href={href} className="block py-2">
@@ -34,9 +34,9 @@ function MobileNavItem({
   )
 }
 
-function MobileNavigation(
+const MobileNavigation = (
   props: React.ComponentPropsWithoutRef<typeof Popover>,
-) {
+) => {
   return (
     <Popover {...props}>
       <Popover.Button className="group flex items-center rounded-full px-4 py-2 text-sm font-medium shadow-lg ring-1 ring-muted backdrop-blur ">
@@ -92,13 +92,13 @@ function MobileNavigation(
   )
 }
 
-function NavItem({
+const NavItem = ({
   href,
   children,
 }: {
   href: string
   children: React.ReactNode
-}) {
+}) => {
   let isActive = usePathname() === href
 
   return (
@@ -121,7 +121,7 @@ function NavItem({
   )
 }
 
-function DesktopNavigation(props: React.ComponentPropsWithoutRef<'nav'>) {
+const DesktopNavigation = (props: React.ComponentPropsWithoutRef<'nav'>) => {
   return (
     <nav {...props}>
       <ul className="flex rounded-full bg-card px-3 text-sm font-medium shadow-md ring-1 ring-muted backdrop-blur">
@@ -140,19 +140,19 @@ function DesktopNavigation(props: React.ComponentPropsWithoutRef<'nav'>) {
   )
 }
 
-function clamp(number: number, a: number, b: number) {
+const clamp = (number: number, a: number, b: number) => {
   let min = Math.min(a, b)
   let max = Math.max(a, b)
   return Math.min(Math.max(number, min), max)
 }
 
-function AvatarContainer({
+const AvatarContainer = ({
   showName = false,
   className,
   ...props
 }: React.ComponentPropsWithoutRef<'div'> & {
   showName?: boolean
-}) {
+}) => {
   return (
     <div className="flex flex-row items-center gap-2">
       <div
@@ -171,13 +171,13 @@ function AvatarContainer({
   )
 }
 
-function Avatar({
+const Avatar = ({
   large = false,
   className,
   ...props
 }: Omit<React.ComponentPropsWithoutRef<typeof Link>, 'href'> & {
   large?: boolean
-}) {
+}) => {
   return (
     <Link
       href="/"
@@ -199,7 +199,7 @@ function Avatar({
   )
 }
 
-export function Header() {
+export const Header = () => {
   let isHomePage = usePathname() === '/'
 
   let headerRef = useRef<React.ElementRef<'div'>>(null)
@@ -210,15 +210,15 @@ export function Header() {
     let downDelay = avatarRef.current?.offsetTop ?? 0
     let upDelay = 64
 
-    function setProperty(property: string, value: string) {
+    const setProperty = (property: string, value: string) => {
       document.documentElement.style.setProperty(property, value)
     }
 
-    function removeProperty(property: string) {
+    const removeProperty = (property: string) => {
       document.documentElement.style.removeProperty(property)
     }
 
-    function updateHeaderStyles() {
+    const updateHeaderStyles = () => {
       if (!headerRef.current) {
         return
       }
@@ -259,7 +259,7 @@ export function Header() {
       // }
     }
 
-    function updateAvatarStyles() {
+    const updateAvatarStyles = () => {
       if (!isHomePage) {
         return
       }
@@ -407,7 +407,6 @@ export function Header() {
                 <div className="pointer-events-auto flex flex-row items-center gap-2 md:mr-2">
                   <ChooseLocale />
                   <ThemeToggle />
-
                   <GithubRepo />
                 </div>
               </div>

@@ -6,13 +6,13 @@ import { FriendItemType } from '@/config/infoConfig'
 import { utm_source } from '@/config/siteConfig'
 import Link from 'next/link'
 
-export function FriendCard({
+export const FriendCard = ({
   friend,
   titleAs,
 }: {
   friend: FriendItemType
   titleAs?: keyof JSX.IntrinsicElements
-}) {
+}) => {
   const utmLink = `${friend.link.href}?utm_source=${utm_source}`
   let Component = titleAs ?? 'h2'
   return (

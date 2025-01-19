@@ -5,11 +5,11 @@ import { EducationItemType, educationList } from '@/config/infoConfig'
 import { CustomIcon } from '@/components/shared/CustomIcon'
 import { useLocale, useTranslations } from 'next-intl'
 
-function EducationItem({
+const EducationItem = ({
   educationItem,
 }: {
   educationItem: EducationItemType
-}) {
+}) => {
   const personal = useTranslations('personal')
 
   return (

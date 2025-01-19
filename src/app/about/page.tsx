@@ -2,16 +2,16 @@ import { type Metadata } from 'next'
 import Image from 'next/image'
 import { aboutParagraphs } from '@/config/infoConfig'
 import { Container } from '@/components/layout/Container'
-import portraitImage from '@/images/portrait.png'
+import portraitImage from '@/images/portrait.jpg'
 import SocialLinks from '@/components/about/SocialLinks'
 import { useLocale, useTranslations } from 'next-intl'
 
 export const metadata: Metadata = {
   title: '关于',
-  description: '我是garron。',
+  description: '我是garron,AI 全栈工程师,AI Agrent开发',
 }
 
-export default function AboutPage() {
+export const AboutPage = () => {
   const about = useTranslations('about')
   const locale = useLocale()
 
@@ -29,7 +29,7 @@ export default function AboutPage() {
           </div>
         </div>
         <div className="lg:order-first lg:row-span-2">
-          <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
+          <h1 className="text-2xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-4xl  ">
             {about('aboutMeHeadline')}
           </h1>
           <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
@@ -45,3 +45,5 @@ export default function AboutPage() {
     </Container>
   )
 }
+
+export default AboutPage

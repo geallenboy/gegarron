@@ -3,13 +3,13 @@ import { useId } from 'react'
 import { ChangelogItemType, changelogList } from '@/config/infoConfig'
 import { useLocale } from 'next-intl'
 
-function ChangelogSection({
+const ChangelogSection = ({
   date,
   children,
 }: {
   date: string
   children: React.ReactNode
-}) {
+}) => {
   let id = useId()
 
   return (

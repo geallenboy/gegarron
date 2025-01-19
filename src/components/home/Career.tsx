@@ -5,7 +5,7 @@ import { CareerItemType, careerList } from '@/config/infoConfig'
 import { CustomIcon } from '@/components/shared/CustomIcon'
 import { useLocale, useTranslations } from 'next-intl'
 
-function CareerItem({ careerItem }: { careerItem: CareerItemType }) {
+const CareerItem = ({ careerItem }: { careerItem: CareerItemType }) => {
   const personal = useTranslations('personal')
 
   return (

@@ -1,19 +1,26 @@
 import { SimpleLayout } from '@/components/layout/SimpleLayout'
-import { changelogIntro, changelogHeadLine } from '@/config/infoConfig'
 
 import ChangelogBlock from '@/components/changelog/Changelog'
+import { useTranslations } from 'next-intl'
 
 export const metadata = {
   title: '网站日志',
-  description: changelogHeadLine,
+  description: '网站日志',
 }
 
-export default function ChangelogPage() {
+export const ChangelogPage = () => {
+  const changelogT = useTranslations('changelog')
+
   return (
-    <SimpleLayout title={changelogHeadLine} intro={changelogIntro}>
+    <SimpleLayout
+      title={changelogT('changelogHeadLine')}
+      intro={changelogT('changelogIntro')}
+    >
       <div className="space-y-20">
         <ChangelogBlock />
       </div>
     </SimpleLayout>
   )
 }
+
+export default ChangelogPage

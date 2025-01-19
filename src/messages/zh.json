@@ -1,22 +1,22 @@
 {
   "LocaleSwitcher": {
-    "cn": "中文",
+    "zh": "中文",
     "en": "英文",
     "label": "语言"
   },
   "personal": {
     "name": "GeGarron",
-    "headline": "软件工程师、AI全栈 Web 开发者、独立开发者。",
-    "introduction": "我是Garron，一名软件工程师。喜欢编程，喜欢新的技术，喜欢构建有趣的东西。",
+    "headline": "AI全栈工程师 | 独立开发者 ",
+    "introduction": "你好，我是GeGarron，AI全栈工程师，独立开发者。",
     "email": "gejialun88@gmail.com",
     "githubUsername": "geallenboy",
     "sourceCode": "源码",
     "company": "公司",
-    "titel": "标题",
+    "title": "标题",
     "date": "日期"
   },
   "about": {
-    "aboutMeHeadline": "我是GeGarron, 一名软件工程师。"
+    "aboutMeHeadline": "你好，我是GeGarron，AI全栈工程师，独立开发者。"
   },
   "project": {
     "projectHeadLine": "我曾做过的事和我正在做的事.",
@@ -24,7 +24,7 @@
   },
   "blog": {
     "blogHeadLine": "我在思考的事情",
-    "blogIntro": "我写了一些关于AI、编程和生活的内容.",
+    "blogIntro": "写一些关于思考、编程和生活的内容.",
     "title1": "订阅我的文章",
     "title2": "欢迎订阅我的文章",
     "title3": "订阅",
@@ -52,7 +52,7 @@
     "end": "2016"
   },
   "career": {
-    "company": "AIing",
+    "company": "AI",
     "title": "软件工程师",
     "logo": "电商",
     "start": "2016",
