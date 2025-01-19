@@ -13,6 +13,7 @@ export const metadata: Metadata = {
 
 const FriendsPage = () => {
   const friendsT = useTranslations('friends')
+
   return (
     <SimpleLayout
       title={friendsT('friendsHeadLine')}

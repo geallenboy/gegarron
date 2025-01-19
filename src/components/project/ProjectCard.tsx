@@ -5,6 +5,7 @@ import Image from 'next/image'
 import { ArrowUpRight } from '@phosphor-icons/react'
 import { ProjectItemType } from '@/config/infoConfig'
 import Link from 'next/link'
+import { utm_source } from '@/config/siteConfig'
 
 export const ProjectCard = ({
   project,
@@ -13,6 +14,8 @@ export const ProjectCard = ({
   project: ProjectItemType
   titleAs?: keyof JSX.IntrinsicElements
 }) => {
+  const utmLink = `https://${project.link.href}?utm_source=${utm_source}`
+
   let Component = titleAs ?? 'h2'
   return (
     <div className="group relative flex h-full flex-col items-start">
@@ -56,7 +59,7 @@ export const ProjectCard = ({
           )}
         </div>
         <Link
-          href={project.link.href}
+          href={utmLink}
           target="_blank"
           rel="noopener noreferrer"
           className="absolute h-full w-full"
