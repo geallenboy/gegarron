@@ -15,6 +15,7 @@ import { CustomIcon } from '@/components/shared/CustomIcon'
 import IconCloud from '@/components/layout/IconCloud'
 import { useLocale, useTranslations } from 'next-intl'
 import BlogList from '@/components/home/BlogList'
+import { ColourfulText } from '@/components/ui/colourful-text'
 
 const HomePage = () => {
   const locale = useLocale()
@@ -28,7 +29,7 @@ const HomePage = () => {
         <div className="mb-10 grid grid-cols-1 md:grid-cols-2">
           <div className="md:mt-20">
             <h2 className="text-2xl font-semibold tracking-tight opacity-80 sm:text-3xl">
-              {personal('headline')}
+              <ColourfulText text={personal('headline')} />
             </h2>
             <p className="mt-6 text-base text-muted-foreground">
               {personal('introduction')}
