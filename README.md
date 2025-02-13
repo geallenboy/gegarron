@@ -97,11 +97,12 @@
 
 ## **联系我们**
 
-如果你对该项目有任何问题或建议，请通过以下方式与我们联系：
+如果你有任何问题、合作的想法，或者只是想打个招呼，随时与我联系！
 
-- **Email**: gejialun88@gmail.com
-- **Weixin**: gegarron
-- **GitHub Issues**: [提交 Issue](https://github.com/geallenboy/gegarron/issues)
+- **电子邮件**：[gejialun88@gmail.com](mailto:gejialun88@gmail.com)
+- **Twitter**：[@gejialun88](https://x.com/gejialun88)
+- **个人网站**：[我的网站](https://gegarron.com)
+- **微信号**：wxgegarron
 
 ---
 
