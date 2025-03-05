@@ -128,3 +128,11 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+
+# OpenNext
+/.open-next
+
+# wrangler files
+.wrangler
+.dev.vars
