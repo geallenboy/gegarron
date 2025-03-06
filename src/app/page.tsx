@@ -8,6 +8,7 @@ import {
   ProjectItemType,
   projectsList,
 } from '@/config/infoConfig'
+import { type Metadata } from 'next'
 import { ProjectCard } from '@/components/project/ProjectCard'
 import { GithubProjectCard } from '@/components/project/GithubProjectCard'
 import GithubContributions from '@/components/home/GithubCalendar'
@@ -16,6 +17,12 @@ import IconCloud from '@/components/layout/IconCloud'
 import { useLocale, useTranslations } from 'next-intl'
 import BlogList from '@/components/home/BlogList'
 import { ColourfulText } from '@/components/ui/colourful-text'
+
+export const metadata: Metadata = {
+  title: '首页｜home',
+  description: '我是gegarron,AI 全栈工程师,独立开发者,创业者,开源爱好者',
+  keywords: 'gegarron, AI, 全栈工程师, 独立开发者, 创业者, 开源爱好者',
+}
 
 const HomePage = () => {
   const locale = useLocale()

@@ -8,7 +8,8 @@ import { useLocale, useTranslations } from 'next-intl'
 
 export const metadata: Metadata = {
   title: '关于',
-  description: '我是garron,AI 全栈工程师,AI Agrent开发',
+  description: '我是garron,AI 全栈工程师,独立开发者,创业者,开源爱好者',
+  keywords: 'garron, AI, 全栈工程师, 独立开发者, 创业者, 开源爱好者',
 }
 
 const AboutPage = () => {

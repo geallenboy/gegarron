@@ -24,7 +24,7 @@ export const socialLinks: Array<SocialLinkType> = [
   {
     name: 'Wechat',
     icon: 'wechat',
-    href: 'https://mp.weixin.qq.com'
+    href: 'https://github.com/geallenboy'
   }
 ]
 
@@ -476,11 +476,13 @@ export const changelogList: any = {
 
 export const aboutParagraphs: any = {
   en: [
-    " With 10 years of front-end development experience, I am currently focused on the development and exploration of AI applications, dedicated to integrating artificial intelligence technology with real-world scenarios to create innovative and efficient solutions.",
-    "I have many hobbies, such as fitness, watching movies, listening to music, traveling, and more."
+    "In this rapidly evolving era of artificial intelligence, I focus on transforming cutting-edge AI technologies into practical and innovative solutions. With solid front-end development foundations and deep understanding of AI technologies, I can build AI application systems that are both aesthetically intuitive and powerfully functional. From user experience design to system architecture construction, from model integration to deployment and maintenance, I strive to build seamlessly connected technical systems throughout the AI development process.",
+    "As an independent developer and entrepreneur, I focus on real-world application scenarios of AI across various industries, dedicated to solving real-world problems. I maintain an enthusiastic exploration of AGI (Artificial General Intelligence), believing that technological innovation can bring a better future for humanity. My projects emphasize combining technological breakthroughs with practical applications, based on professional engineering practices, using innovative thinking to expand the possibilities of AI.",
+    "Whether you're seeking technical collaboration or share an interest in the AI field, I look forward to connecting with you to explore the unlimited potential of AI together."
   ],
   zh: [
-    "拥有10年前端编程经验、目前专注于AI应用的开发与探索，致力于将人工智能技术与实际场景相结合，打造创新、高效的解决方案。",
-    "我有很多爱好、比如健身、看电影、听音乐、旅行等等。"
+    "在人工智能日新月异的时代，我专注于将前沿AI技术转化为实用且创新的解决方案。凭借扎实的前端开发功底和对AI技术的深入理解，我能够构建既美观直观又功能强大的AI应用系统。从用户体验设计到系统架构搭建，从模型集成到部署维护，我追求在AI开发全流程中构建无缝衔接的技术体系。",
+    "作为独立开发者和创业者，我关注AI在各行业的实际应用场景，致力于解决真实世界的问题。我始终保持对AGI(通用人工智能)的探索热情，相信技术创新可以为人类带来更美好的未来。我的项目注重技术突破与实际应用相结合，以专业的工程实践为基础，用创新的思维拓展AI的可能性。",
+    "无论您是寻求技术合作，还是对AI领域有共同兴趣，我期待与您建立联系，共同探索AI的无限可能。"
   ]
 }
