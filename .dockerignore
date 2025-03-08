@@ -1,0 +1,35 @@
+# Dependencies
+node_modules
+.pnpm-store
+
+# Next.js build output
+.next
+out
+
+# Environment files
+.env
+.env.*
+!.env.prod
+
+# Version control
+.git
+.gitignore
+
+# IDE
+.vscode
+.idea
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Cache
+.eslintcache
+.npm
+.pnpm
+
+# System files
+.DS_Store
+Thumbs.db
