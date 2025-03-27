@@ -14,7 +14,7 @@ export const ProjectCard = ({
   project: ProjectItemType
   titleAs?: keyof JSX.IntrinsicElements
 }) => {
-  const utmLink = `https://${project.link.href}?utm_source=${utm_source}`
+  const utmLink = `${project.link.href}?utm_source=${utm_source}`
 
   let Component = titleAs ?? 'h2'
   return (

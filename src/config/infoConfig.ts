@@ -80,7 +80,7 @@ export const careerList: any = {
       "company": "AIing",
       "title": "Software Engineer",
       "logo": "E-commerce",
-      "start": "2016",
+      "start": "2011",
       "end": "2024"
     }
   ],
@@ -88,7 +88,7 @@ export const careerList: any = {
     {
       company: 'AI',
       title: '软件工程师',
-      logo: '电商',
+      logo: 'E-commerce',
       start: '2011',
       end: '2024'
     },
@@ -141,7 +141,7 @@ export const projectsList: any = {
       "name": "AIImage",
       "description": "AI Image is an artificial intelligence-based image generation platform.",
       "link": {
-        "href": "https://aiimage.nextjsbase.site/",
+        "href": "https://aiimage.ailinksall.com",
         "label": "AI Image"
       },
       "logo": "/images/icon/devtoolset.png",
@@ -153,7 +153,7 @@ export const projectsList: any = {
       "name": "AILogo",
       "description": "AI Logo is an innovative platform designed to generate customized logos using artificial intelligence.",
       "link": {
-        "href": "https://ailogo.nextjsbase.site/",
+        "href": "https://ailogo.ailinksall.com",
         "label": "ai logo"
       },
       "logo": "/images/icon/devtoolset.png",
@@ -162,10 +162,10 @@ export const projectsList: any = {
       "tags": ["AILogo"]
     },
     {
-      "name": "AICode",
+      "name": "AIDT",
       "description": "AICode...",
       "link": {
-        "href": "https://aicode.nextjsbase.site/",
+        "href": "https://aidt.ailinksall.com",
         "label": "ai code"
       },
       "logo": "/images/icon/devtoolset.png",
@@ -173,49 +173,49 @@ export const projectsList: any = {
       "techStack": ["Next.js", "TailwindCSS", "Shadcn/UI"],
       "tags": ["AICode"]
     },
-    {
-      "name": "AIPdf",
-      "description": "AIPdf...",
-      "link": {
-        "href": "https://aipdf.nextjsbase.site/",
-        "label": "ai pdf"
-      },
-      "logo": "/images/icon/devtoolset.png",
-      "category": ["网站"],
-      "techStack": ["Next.js", "TailwindCSS", "Shadcn/UI"],
-      "tags": ["AIPdf"]
-    },
-    {
-      "name": "AIVideo",
-      "description": "AIVideo...",
-      "link": {
-        "href": "https://aivideo.nextjsbase.site/",
-        "label": "ai video"
-      },
-      "logo": "/images/icon/devtoolset.png",
-      "category": ["网站"],
-      "techStack": ["Next.js", "TailwindCSS", "Shadcn/UI"],
-      "tags": ["AIVideo"]
-    },
-    {
-      "name": "AIResume",
-      "description": "AIResume...",
-      "link": {
-        "href": "https://airesume.nextjsbase.site/",
-        "label": "ai resume"
-      },
-      "logo": "/images/icon/devtoolset.png",
-      "category": ["网站"],
-      "techStack": ["Next.js", "TailwindCSS", "Shadcn/UI"],
-      "tags": ["AIResume"]
-    }
+    // {
+    //   "name": "AIPdf",
+    //   "description": "AIPdf...",
+    //   "link": {
+    //     "href": "https://aipdf.nextjsbase.site/",
+    //     "label": "ai pdf"
+    //   },
+    //   "logo": "/images/icon/devtoolset.png",
+    //   "category": ["网站"],
+    //   "techStack": ["Next.js", "TailwindCSS", "Shadcn/UI"],
+    //   "tags": ["AIPdf"]
+    // },
+    // {
+    //   "name": "AIVideo",
+    //   "description": "AIVideo...",
+    //   "link": {
+    //     "href": "https://aivideo.nextjsbase.site/",
+    //     "label": "ai video"
+    //   },
+    //   "logo": "/images/icon/devtoolset.png",
+    //   "category": ["网站"],
+    //   "techStack": ["Next.js", "TailwindCSS", "Shadcn/UI"],
+    //   "tags": ["AIVideo"]
+    // },
+    // {
+    //   "name": "AIResume",
+    //   "description": "AIResume...",
+    //   "link": {
+    //     "href": "https://airesume.nextjsbase.site/",
+    //     "label": "ai resume"
+    //   },
+    //   "logo": "/images/icon/devtoolset.png",
+    //   "category": ["网站"],
+    //   "techStack": ["Next.js", "TailwindCSS", "Shadcn/UI"],
+    //   "tags": ["AIResume"]
+    // }
   ],
   zh: [
     {
       "name": "AIImage",
       "description": "AI Image 是一款基于人工智能的图像生成平台。",
       "link": {
-        "href": "https://aiimage.nextjsbase.site/",
+        "href": "https://aiimage.ailinksall.com",
         "label": "AI Image"
       },
       "logo": "/images/icon/devtoolset.png",
@@ -227,7 +227,7 @@ export const projectsList: any = {
       "name": "AILogo",
       "description": "AI Logo 是一款创新平台，旨在利用人工智能生成定制化的 logo。",
       "link": {
-        "href": "https://ailogo.nextjsbase.site/",
+        "href": "https://ailogo.ailinksall.com",
         "label": "ai logo"
       },
       "logo": "/images/icon/devtoolset.png",
@@ -236,10 +236,10 @@ export const projectsList: any = {
       "tags": ["AILogo"]
     },
     {
-      "name": "AICode",
+      "name": "AIDT",
       "description": "AICode...",
       "link": {
-        "href": "https://aicode.nextjsbase.site/",
+        "href": "https://aidt.ailinksall.com",
         "label": "ai code"
       },
       "logo": "/images/icon/devtoolset.png",
@@ -248,41 +248,41 @@ export const projectsList: any = {
       "tags": ["AICode"]
     },
     {
-      "name": "AIPdf",
-      "description": "AIPdf...",
+      "name": "AITemplate",
+      "description": "AITemplate...",
       "link": {
-        "href": "https://aipdf.nextjsbase.site/",
-        "label": "ai pdf"
+        "href": "https://ailinksall.com",
+        "label": "ai sass template"
       },
       "logo": "/images/icon/devtoolset.png",
       "category": ["网站"],
       "techStack": ["Next.js", "TailwindCSS", "Shadcn/UI"],
-      "tags": ["AIPdf"]
+      "tags": ["AITemplate", "ai"]
     },
-    {
-      "name": "AIVideo",
-      "description": "AIVideo...",
-      "link": {
-        "href": "https://aivideo.nextjsbase.site/",
-        "label": "ai video"
-      },
-      "logo": "/images/icon/devtoolset.png",
-      "category": ["网站"],
-      "techStack": ["Next.js", "TailwindCSS", "Shadcn/UI"],
-      "tags": ["AIVideo"]
-    },
-    {
-      "name": "AIResume",
-      "description": "AIResume...",
-      "link": {
-        "href": "https://airesume.nextjsbase.site/",
-        "label": "ai resume"
-      },
-      "logo": "/images/icon/devtoolset.png",
-      "category": ["网站"],
-      "techStack": ["Next.js", "TailwindCSS", "Shadcn/UI"],
-      "tags": ["AIResume"]
-    }
+    // {
+    //   "name": "AIVideo",
+    //   "description": "AIVideo...",
+    //   "link": {
+    //     "href": "https://aivideo.nextjsbase.site/",
+    //     "label": "ai video"
+    //   },
+    //   "logo": "/images/icon/devtoolset.png",
+    //   "category": ["网站"],
+    //   "techStack": ["Next.js", "TailwindCSS", "Shadcn/UI"],
+    //   "tags": ["AIVideo"]
+    // },
+    // {
+    //   "name": "AIResume",
+    //   "description": "AIResume...",
+    //   "link": {
+    //     "href": "https://airesume.nextjsbase.site/",
+    //     "label": "ai resume"
+    //   },
+    //   "logo": "/images/icon/devtoolset.png",
+    //   "category": ["网站"],
+    //   "techStack": ["Next.js", "TailwindCSS", "Shadcn/UI"],
+    //   "tags": ["AIResume"]
+    // }
   ]
 }
 
@@ -391,11 +391,11 @@ export const githubProjectsList: any = {
       "gitForks": 0
     },
     {
-      "name": "ai-video",
-      "description": "ai video",
+      "name": "ai-search",
+      "description": "ai-search",
       "link": {
-        "href": "https://github.com/geallenboy/ai-video",
-        "label": "ai-video"
+        "href": "https://github.com/geallenboy/ai-search",
+        "label": "ai-search"
       },
       "gitStars": 0,
       "gitForks": 0
@@ -406,6 +406,16 @@ export const githubProjectsList: any = {
       "link": {
         "href": "https://github.com/geallenboy/ai-resume",
         "label": "ai-resume"
+      },
+      "gitStars": 0,
+      "gitForks": 0
+    },
+    {
+      "name": "ai-chat",
+      "description": "ai chat",
+      "link": {
+        "href": "https://github.com/geallenboy/ai-chat",
+        "label": "ai-chat"
       },
       "gitStars": 0,
       "gitForks": 0
