@@ -1,4 +1,4 @@
-import OpenPanelAnalytics from './open-panel-analytics'
+import GoogleAnalytics from './google-analytics'
 
 export const Analytics = () => {
   if (process.env.NODE_ENV !== 'production') {
@@ -7,7 +7,8 @@ export const Analytics = () => {
 
   return (
     <>
-      <OpenPanelAnalytics />
+      <GoogleAnalytics />
+      
     </>
   )
 }

@@ -47,14 +47,8 @@ export const footerItems: any = {
       name: '文章',
       href: '/blogs'
     },
-    {
-      name: '朋友',
-      href: '/friends'
-    },
-    {
-      name: '网站日志',
-      href: '/changelog'
-    }
+    
+    
   ]
 }
 

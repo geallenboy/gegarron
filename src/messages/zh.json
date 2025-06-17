@@ -6,21 +6,24 @@
   },
   "personal": {
     "name": "GeGarron",
-    "headline": "AI全栈工程师 | 独立开发者｜创业者 ",
-    "introduction": "欢迎来到我的数字世界。作为一名全栈工程师和独立开发者，我将前端开发的专业技能与AI技术的创新应用完美融合。我的职业旅程始于前端工程，通过不断学习和实践，我逐步拓展到AI应用的全栈开发领域，最终踏上了独立创业的道路。",
+    "headline": "赋能未来：AI 自动化与独立开发者的技术探索",
+    "introduction": "在人工智能日新月异的时代，我专注于将前沿AI技术转化为实用且创新的解决方案。作为全栈工程师、独立开发者、AI探索者和AI自动化，我致力于构建既美观直观又功能强大的AI应用系统。从用户体验设计到系统架构搭建，从模型集成到部署维护，我追求在AI开发全流程中构建无缝衔接的技术体系。",
     "email": "gejialun88@gmail.com",
     "githubUsername": "geallenboy",
     "sourceCode": "源码",
+    "projects": "项目",
     "company": "公司",
     "title": "标题",
-    "date": "日期"
+    "date": "日期",
+    "servicesHeadline": "核心服务与技能",
+    "servicesIntro": "专注于AI自动化解决方案、独立产品开发、技术咨询与开源贡献"
   },
   "about": {
-    "aboutMeHeadline": "你好，我是GeGarron，AI全栈工程师，独立开发者。"
+    "aboutMeHeadline": "你好，我是GeGarron，全栈工程师、独立开发者、AI探索者、AI自动化。"
   },
   "project": {
-    "projectHeadLine": "我曾做过的事和我正在做的事.",
-    "projectIntro": "我参与过各种类型的项目，从简单的网站到复杂的网页应用程序，其中许多是开源的。以下是我最喜欢的一些项目。"
+    "projectHeadLine": "曾做过的事和正在做的事.",
+    "projectIntro": "参与过各种类型的项目，从简单的网站到复杂的网页应用程序，其中许多是开源的。以下是我最喜欢的一些项目。"
   },
   "blog": {
     "blogHeadLine": "我在思考的事情",

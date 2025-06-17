@@ -1,43 +1,46 @@
-import { type Metadata } from 'next'
-import { NextIntlClientProvider } from 'next-intl'
-import { getLocale, getMessages } from 'next-intl/server'
-import { Providers } from '@/app/providers'
-import { Layout } from '@/components/layout/Layout'
-import { Analytics } from '@/components/analytics/analytics'
-import { name } from '@/config/infoConfig'
 import '@/styles/tailwind.css'
+import { Providers } from './providers'
+import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: {
-    template: `%s - ${name}`,
-    default: `AI全栈工程师｜独立开发者`,
+  title: 'GeGarron - AI Engineer & Independent Developer',
+  description: 'AI Engineer, Independent Developer, AI Explorer, AI Automation Expert. Focused on AI automation solutions and independent product development.',
+  keywords: 'AI, Full-stack Engineer, Independent Developer, AI Explorer, AI Automation, Next.js, React, TypeScript',
+  authors: [{ name: 'GeGarron' }],
+  creator: 'GeGarron',
+  publisher: 'GeGarron',
+  robots: {
+    index: true,
+    follow: true,
   },
-  description: `我是GeGarron，AI全栈工程师,独立开发者。`,
-  alternates: {
-    types: {
-      'application/rss+xml': `${process.env.NEXT_PUBLIC_SITE_URL}/feed`,
-    },
+  openGraph: {
+    type: 'website',
+    locale: 'zh_CN',
+    url: 'https://gegarron.com',
+    title: 'GeGarron - AI Engineer & Independent Developer',
+    description: 'AI Engineer, Independent Developer, AI Explorer, AI Automation Expert',
+    siteName: 'GeGarron Portfolio',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'GeGarron - AI Engineer & Independent Developer',
+    description: 'AI Engineer, Independent Developer, AI Explorer, AI Automation Expert',
+    creator: '@gejialun88',
   },
 }
 
-const RootLayout = async ({ children }: { children: React.ReactNode }) => {
-  const locale = await getLocale()
-  const messages = await getMessages()
-
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
   return (
-    <html lang={locale} className="h-full antialiased" suppressHydrationWarning>
-      <body className="flex h-full">
-        <NextIntlClientProvider messages={messages}>
-          <Providers>
-            <div className="flex w-full">
-              <Layout>{children}</Layout>
-            </div>
-            <Analytics />
-          </Providers>
-        </NextIntlClientProvider>
+    <html lang="zh" suppressHydrationWarning>
+      <body>
+        <Providers>
+        {children}
+        </Providers>
       </body>
     </html>
   )
 }
-
-export default RootLayout

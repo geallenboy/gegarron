@@ -1,11 +1,9 @@
-import typographyPlugin from '@tailwindcss/typography'
+
 import { type Config } from 'tailwindcss'
-import typographyStyles from './typography'
 
 export default {
 	content: ['./src/**/*.{js,jsx,ts,tsx}'],
 	darkMode: ['class'],
-	plugins: [typographyPlugin, require("tailwindcss-animate")],
 	theme: {
 		fontSize: {
 			xs: [
@@ -87,7 +85,6 @@ export default {
 				}
 			]
 		},
-		typography: 'typographyStyles',
 		extend: {
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -164,5 +161,5 @@ export default {
 				}
 			}
 		}
-	},
+	}
 } satisfies Config

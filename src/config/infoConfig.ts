@@ -1,7 +1,76 @@
-
 // personal info
 export const name = 'GeGarron'
 export const email = 'gejialun88@gmail.com'
+
+// 个人身份定位
+export const identities = {
+  en: [
+    'Independent Developer', 
+    'AI Explorer',
+    'AI Automation Expert',
+    'AI Engineer'
+  ],
+  zh: [
+    '独立开发者',
+    'AI 探索者',
+    'AI 自动化'
+  ]
+}
+
+// 核心技能与服务
+export const coreServices = {
+  en: [
+    {
+      title: 'AI Automation Solutions',
+      description: 'Design and develop customized AI automation workflows and systems using cutting-edge tools like n8n for individuals and enterprises.',
+      icon: 'robot'
+    },
+    {
+      title: 'Independent Product Development',
+      description: 'Build and launch innovative products, tools, and services as an independent developer, focusing on AI-powered solutions.',
+      icon: 'code'
+    },
+    {
+      title: 'AI Technology Consulting',
+      description: 'Share cutting-edge AI knowledge and provide technical consulting to help individuals and teams embrace AI transformation.',
+      icon: 'lightbulb'
+    },
+    {
+      title: 'Open Source Contribution',
+      description: 'Actively contribute to open source communities and share technical experiences and best practices through blogs.',
+      icon: 'github'
+    }
+  ],
+  zh: [
+    {
+      title: 'AI 自动化解决方案',
+      description: '为个人或企业提供基于 AI 和自动化工具（如 n8n）的定制化工作流和系统搭建服务。',
+      icon: 'robot'
+    },
+    {
+      title: '独立产品开发',
+      description: '作为独立开发者孵化和推广创新产品、工具或服务，专注于 AI 驱动的解决方案。',
+      icon: 'code'
+    },
+    {
+      title: 'AI 技术咨询与赋能',
+      description: '分享 AI 领域的前沿知识，提供技术咨询，助力个人或团队拥抱 AI 变革。',
+      icon: 'lightbulb'
+    },
+    {
+      title: '开源贡献与技术分享',
+      description: '积极参与开源社区，并通过博客分享技术经验和最佳实践。',
+      icon: 'github'
+    }
+  ]
+}
+
+// 技术愿景
+export const techVision = {
+  en: 'Empowering the future through AI automation and independent innovation',
+  zh: '赋能未来：AI 自动化与独立开发者的技术探索'
+}
+
 // social links
 export type SocialLinkType = {
   name: string,
@@ -28,7 +97,6 @@ export const socialLinks: Array<SocialLinkType> = [
   }
 ]
 
-
 // education 
 export type EducationItemType = {
   school: string
@@ -38,7 +106,6 @@ export type EducationItemType = {
   start: string
   end: string
 }
-
 
 //Array<EducationItemType>
 export const educationList: any = {
@@ -71,7 +138,6 @@ export type CareerItemType = {
   start: string
   end: string
 }
-
 
 // Array<CareerItemType>
 export const careerList: any = {
@@ -109,7 +175,6 @@ export type ProjectItemType = {
   gitForks?: number
 }
 
-
 // changelog
 export type ChangelogItemType = {
   date: string
@@ -134,155 +199,34 @@ export const friends: Array<FriendItemType> = [
   }
 ]
 
-
 export const projectsList: any = {
   en: [
     {
-      "name": "AIImage",
-      "description": "AI Image is an artificial intelligence-based image generation platform.",
+      "name": "AI N8N自动化",
+      "description": "AI N8N自动化是一个基于N8N的自动化平台，可以帮助你自动化你的工作流程。",
       "link": {
-        "href": "https://aiimage.ailinksall.com",
-        "label": "AI Image"
+        "href": "https://aiautomatehub.org/",
+        "label": "AI N8N自动化"
       },
       "logo": "/images/icon/devtoolset.png",
-      "category": ["网站", "AI Image"],
+      "category": ["网站", "AI N8N自动化"],
       "techStack": ["Next.js", "TailwindCSS", "Shadcn/UI", "vercel"],
-      "tags": ["AI", "Image"]
-    },
-    {
-      "name": "AILogo",
-      "description": "AI Logo is an innovative platform designed to generate customized logos using artificial intelligence.",
-      "link": {
-        "href": "https://ailogo.ailinksall.com",
-        "label": "ai logo"
-      },
-      "logo": "/images/icon/devtoolset.png",
-      "category": ["网站"],
-      "techStack": ["Next.js", "TailwindCSS", "Shadcn/UI"],
-      "tags": ["AILogo"]
-    },
-    {
-      "name": "AIDT",
-      "description": "AICode...",
-      "link": {
-        "href": "https://aidt.ailinksall.com",
-        "label": "ai code"
-      },
-      "logo": "/images/icon/devtoolset.png",
-      "category": ["网站"],
-      "techStack": ["Next.js", "TailwindCSS", "Shadcn/UI"],
-      "tags": ["AICode"]
-    },
-    // {
-    //   "name": "AIPdf",
-    //   "description": "AIPdf...",
-    //   "link": {
-    //     "href": "https://aipdf.nextjsbase.site/",
-    //     "label": "ai pdf"
-    //   },
-    //   "logo": "/images/icon/devtoolset.png",
-    //   "category": ["网站"],
-    //   "techStack": ["Next.js", "TailwindCSS", "Shadcn/UI"],
-    //   "tags": ["AIPdf"]
-    // },
-    // {
-    //   "name": "AIVideo",
-    //   "description": "AIVideo...",
-    //   "link": {
-    //     "href": "https://aivideo.nextjsbase.site/",
-    //     "label": "ai video"
-    //   },
-    //   "logo": "/images/icon/devtoolset.png",
-    //   "category": ["网站"],
-    //   "techStack": ["Next.js", "TailwindCSS", "Shadcn/UI"],
-    //   "tags": ["AIVideo"]
-    // },
-    // {
-    //   "name": "AIResume",
-    //   "description": "AIResume...",
-    //   "link": {
-    //     "href": "https://airesume.nextjsbase.site/",
-    //     "label": "ai resume"
-    //   },
-    //   "logo": "/images/icon/devtoolset.png",
-    //   "category": ["网站"],
-    //   "techStack": ["Next.js", "TailwindCSS", "Shadcn/UI"],
-    //   "tags": ["AIResume"]
-    // }
+      "tags": ["AI", "N8N"]
+    }
   ],
   zh: [
     {
-      "name": "AIImage",
-      "description": "AI Image 是一款基于人工智能的图像生成平台。",
+      "name": "AI N8N自动化",
+      "description": "AI N8N自动化是一个基于N8N的自动化平台，可以帮助你自动化你的工作流程。",
       "link": {
-        "href": "https://aiimage.ailinksall.com",
-        "label": "AI Image"
+        "href": "https://aiautomatehub.org/",
+        "label": "AI N8N自动化"
       },
       "logo": "/images/icon/devtoolset.png",
-      "category": ["网站", "AI Image"],
+      "category": ["网站", "AI N8N自动化"],
       "techStack": ["Next.js", "TailwindCSS", "Shadcn/UI", "vercel"],
-      "tags": ["AI", "Image"]
-    },
-    {
-      "name": "AILogo",
-      "description": "AI Logo 是一款创新平台，旨在利用人工智能生成定制化的 logo。",
-      "link": {
-        "href": "https://ailogo.ailinksall.com",
-        "label": "ai logo"
-      },
-      "logo": "/images/icon/devtoolset.png",
-      "category": ["网站"],
-      "techStack": ["Next.js", "TailwindCSS", "Shadcn/UI"],
-      "tags": ["AILogo"]
-    },
-    {
-      "name": "AIDT",
-      "description": "AICode...",
-      "link": {
-        "href": "https://aidt.ailinksall.com",
-        "label": "ai code"
-      },
-      "logo": "/images/icon/devtoolset.png",
-      "category": ["网站"],
-      "techStack": ["Next.js", "TailwindCSS", "Shadcn/UI"],
-      "tags": ["AICode"]
-    },
-    {
-      "name": "AITemplate",
-      "description": "AITemplate...",
-      "link": {
-        "href": "https://ailinksall.com",
-        "label": "ai sass template"
-      },
-      "logo": "/images/icon/devtoolset.png",
-      "category": ["网站"],
-      "techStack": ["Next.js", "TailwindCSS", "Shadcn/UI"],
-      "tags": ["AITemplate", "ai"]
-    },
-    // {
-    //   "name": "AIVideo",
-    //   "description": "AIVideo...",
-    //   "link": {
-    //     "href": "https://aivideo.nextjsbase.site/",
-    //     "label": "ai video"
-    //   },
-    //   "logo": "/images/icon/devtoolset.png",
-    //   "category": ["网站"],
-    //   "techStack": ["Next.js", "TailwindCSS", "Shadcn/UI"],
-    //   "tags": ["AIVideo"]
-    // },
-    // {
-    //   "name": "AIResume",
-    //   "description": "AIResume...",
-    //   "link": {
-    //     "href": "https://airesume.nextjsbase.site/",
-    //     "label": "ai resume"
-    //   },
-    //   "logo": "/images/icon/devtoolset.png",
-    //   "category": ["网站"],
-    //   "techStack": ["Next.js", "TailwindCSS", "Shadcn/UI"],
-    //   "tags": ["AIResume"]
-    // }
+      "tags": ["AI", "N8N"]
+    }
   ]
 }
 
@@ -292,7 +236,7 @@ export const githubProjectsList: any = {
       "name": "ai-image",
       "description": "ai image",
       "link": {
-        "href": "https://github.com/geallenboy/ai-image",
+        "href": "#",
         "label": "ai-image"
       },
       "gitStars": 0,
@@ -302,7 +246,7 @@ export const githubProjectsList: any = {
       "name": "ai-logo",
       "description": "ai logo",
       "link": {
-        "href": "https://github.com/geallenboy/ai-logo",
+        "href": "#",
         "label": "ai-logo"
       },
       "gitStars": 0,
@@ -312,84 +256,13 @@ export const githubProjectsList: any = {
       "name": "ai-code",
       "description": "ai code",
       "link": {
-        "href": "https://github.com/geallenboy/ai-code",
+        "href": "#",
         "label": "ai-code"
       },
       "gitStars": 0,
       "gitForks": 0
     },
-    {
-      "name": "ai-pdf",
-      "description": "ai pdf",
-      "link": {
-        "href": "https://github.com/geallenboy/ai-pdf",
-        "label": "ai-pdf"
-      },
-      "gitStars": 0,
-      "gitForks": 0
-    },
-    {
-      "name": "ai-video",
-      "description": "ai video",
-      "link": {
-        "href": "https://github.com/geallenboy/ai-video",
-        "label": "ai-video"
-      },
-      "gitStars": 0,
-      "gitForks": 0
-    },
-    {
-      "name": "ai-resume",
-      "description": "ai resume",
-      "link": {
-        "href": "https://github.com/geallenboy/ai-resume",
-        "label": "ai-resume"
-      },
-      "gitStars": 0,
-      "gitForks": 0
-    },
-  ],
-  zh: [
-    {
-      "name": "ai-image",
-      "description": "ai image",
-      "link": {
-        "href": "https://github.com/geallenboy/ai-image",
-        "label": "ai-image"
-      },
-      "gitStars": 0,
-      "gitForks": 0
-    },
-    {
-      "name": "ai-logo",
-      "description": "ai logo",
-      "link": {
-        "href": "https://github.com/geallenboy/ai-logo",
-        "label": "ai-logo"
-      },
-      "gitStars": 0,
-      "gitForks": 0
-    },
-    {
-      "name": "ai-code",
-      "description": "ai code",
-      "link": {
-        "href": "https://github.com/geallenboy/ai-code",
-        "label": "ai-code"
-      },
-      "gitStars": 0,
-      "gitForks": 0
-    },
-    {
-      "name": "ai-pdf",
-      "description": "ai pdf",
-      "link": {
-        "href": "https://github.com/geallenboy/ai-pdf",
-        "label": "ai-pdf"
-      },
-      "gitStars": 0,
-      "gitForks": 0
-    },
+    
     {
       "name": "ai-search",
       "description": "ai-search",
@@ -400,16 +273,63 @@ export const githubProjectsList: any = {
       "gitStars": 0,
       "gitForks": 0
     },
+    
     {
-      "name": "ai-resume",
-      "description": "ai resume",
+      "name": "ai-chat",
+      "description": "ai chat",
       "link": {
-        "href": "https://github.com/geallenboy/ai-resume",
-        "label": "ai-resume"
+        "href": "https://github.com/geallenboy/ai-chat",
+        "label": "ai-chat"
+      },
+      "gitStars": 0,
+      "gitForks": 0
+    }
+    
+   
+  ],
+  zh: [
+    {
+      "name": "ai-image",
+      "description": "ai image",
+      "link": {
+        "href": "#",
+        "label": "ai-image"
       },
       "gitStars": 0,
       "gitForks": 0
     },
+    {
+      "name": "ai-logo",
+      "description": "ai logo",
+      "link": {
+        "href": "#",
+        "label": "ai-logo"
+      },
+      "gitStars": 0,
+      "gitForks": 0
+    },
+    {
+      "name": "ai-code",
+      "description": "ai code",
+      "link": {
+        "href": "#",
+        "label": "ai-code"
+      },
+      "gitStars": 0,
+      "gitForks": 0
+    },
+    
+    {
+      "name": "ai-search",
+      "description": "ai-search",
+      "link": {
+        "href": "https://github.com/geallenboy/ai-search",
+        "label": "ai-search"
+      },
+      "gitStars": 0,
+      "gitForks": 0
+    },
+    
     {
       "name": "ai-chat",
       "description": "ai chat",
@@ -495,4 +415,57 @@ export const aboutParagraphs: any = {
     "作为独立开发者和创业者，我关注AI在各行业的实际应用场景，致力于解决真实世界的问题。我始终保持对AGI(通用人工智能)的探索热情，相信技术创新可以为人类带来更美好的未来。我的项目注重技术突破与实际应用相结合，以专业的工程实践为基础，用创新的思维拓展AI的可能性。",
     "无论您是寻求技术合作，还是对AI领域有共同兴趣，我期待与您建立联系，共同探索AI的无限可能。"
   ]
+}
+
+// 技术栈配置
+export const techStack = {
+  frontend: [
+    'React', 'Next.js', 'TypeScript', 'TailwindCSS', 'Vue.js', 
+  ],
+  backend: [
+    'Node.js', 'Python','Prisma', 'PostgreSQL'
+  ],
+  ai: [
+    'OpenAI', 'AI Agent', 'LangChain', 'RAG', 'MCP'
+  ],
+  automation: [
+    'n8n',  'Docker', 'Vercel'
+  ],
+  tools: [
+    'Git', 'cursor', 'notebooklm',  'Notion'
+  ]
+}
+
+// 技术栈标签颜色配置
+export const techStackColors = {
+  React: '#61DAFB',
+  'Next.js': '#000000',
+  TypeScript: '#3178C6',
+  TailwindCSS: '#06B6D4',
+  'Vue.js': '#4FC08D',
+  'cursor': '#00DC82',
+  'Node.js': '#339933',
+  Python: '#3776AB',
+  "AI Agent": '#009688',
+  'RAG': '#000000',
+  Prisma: '#2D3748',
+  PostgreSQL: '#336791',
+  OpenAI: '#412991',
+  "MCP": '#CC785C',
+  LangChain: '#1C3A3A',
+  'notebooklm': '#FFD21E',
+  TensorFlow: '#FF6F00',
+  PyTorch: '#EE4C2C',
+  n8n: '#EA4B71',
+  Zapier: '#FF4A00',
+  'GitHub Actions': '#2088FF',
+  Docker: '#2496ED',
+  Vercel: '#000000',
+  AWS: '#FF9900',
+  Git: '#F05032',
+  'VS Code': '#007ACC',
+  Figma: '#F24E1E',
+  Postman: '#FF6C37',
+  Linear: '#5E6AD2',
+  Notion: '#000000'
 }

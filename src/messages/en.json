@@ -6,18 +6,21 @@
   },
   "personal": {
     "name": "GeGarron",
-    "headline": "AI Full-Stack Engineer | Independent Developer",
-    "introduction": "Welcome to my digital world. As a full-stack engineer and independent developer committed to pushing the boundaries of AI technology, I perfectly blend my professional front-end development skills with innovative AI applications. My career journey began in front-end engineering, and through continuous learning and practice, I gradually expanded into the full-stack development of AI applications, ultimately embarking on the path of independent entrepreneurship.",
+    "headline": "Empowering the future through AI automation and independent innovation",
+    "introduction": "In this rapidly evolving era of artificial intelligence, I focus on transforming cutting-edge AI technologies into practical and innovative solutions. As a full-stack engineer, independent developer, AI explorer, and AI automation expert, I am dedicated to building AI application systems that are both aesthetically intuitive and powerfully functional. From user experience design to system architecture construction, from model integration to deployment and maintenance, I strive to build seamlessly connected technical systems throughout the AI development process.",
     "email": "gejialun88@gmail.com",
     "githubUsername": "geallenboy",
     "sourceCode": "sourceCode",
+    "projects": "projects",
     "company": "company",
     "title": "title",
-    "date": "date"
+    "date": "date",
+    "servicesHeadline": "Core Services & Skills",
+    "servicesIntro": "Focused on AI automation solutions, independent product development, technical consulting, and open source contributions"
   },
 
   "about": {
-    "aboutMeHeadline": "Hello, I'm GeGarron, an AI Full-Stack Engineer and Independent Developer. "
+    "aboutMeHeadline": "Hello, I'm GeGarron, a Full-Stack Engineer, Independent Developer, AI Explorer, and AI Automation Expert."
   },
   "project": {
     "projectHeadLine": "Things I've done and things I'm doing.",
