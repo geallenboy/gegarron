@@ -1,6 +1,6 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import { useTheme } from 'next-themes'
 import { useState, useEffect } from 'react'
 import { 
@@ -13,7 +13,12 @@ import {
   Sparkles,
   Zap,
   Code2,
-  Rocket
+  Rocket,
+  Star,
+  GitFork,
+  MessageCircle,
+  Twitter,
+  Facebook
 } from 'lucide-react'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -64,8 +69,20 @@ const floatingVariants = {
   }
 }
 
+const NewLogo = () => (
+  <svg width="40" height="40" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style={{ stopColor: 'rgb(59, 130, 246)', stopOpacity: 1 }} />
+        <stop offset="100%" style={{ stopColor: 'rgb(139, 92, 246)', stopOpacity: 1 }} />
+      </linearGradient>
+    </defs>
+    <path d="M128 24C65.23 24 24 65.23 24 128C24 190.77 65.23 232 128 232C190.77 232 232 190.77 232 128C232 65.23 190.77 24 128 24ZM183.43 183.43C165.78 201.08 143.43 208 128 208C99.25 208 72.82 196.48 55.48 178.5C55.07 178.08 55.51 177.38 56.16 177.55L110.51 192.43C112.11 192.88 113.82 192.35 114.91 191.09L159.21 138.8C160.25 137.59 160.03 135.72 158.83 134.64L105.79 87.09C104.75 86.17 103.11 86.33 102.26 87.4L78.67 116.89C77.72 118.06 78.23 119.74 79.62 120.11L134.33 135.08C135.53 135.39 136.81 134.87 137.52 133.88L179.33 82.57C197.35 100.28 208 125.43 208 152C208 164.84 204.42 176.94 198.17 187.43C197.55 188.48 198.54 189.65 199.76 189.28L205.85 187.33C206.58 187.07 206.96 186.27 206.53 185.57C205.15 182.85 203.95 180.24 202.94 177.71C202.13 175.77 199.5 175.33 198.21 176.94L183.43 195.43C182.52 196.58 182.91 198.24 184.21 198.6L189.43 200.17C191.38 200.73 191.73 198.21 189.87 197.16L183.43 183.43Z" fill="url(#grad1)"/>
+  </svg>
+);
+
 const HomePage = () => {
-  const { theme, setTheme } = useTheme()
+  const { theme, setTheme, resolvedTheme } = useTheme()
   const [mounted, setMounted] = useState(false)
   const [locale, setLocale] = useState('zh')
 
@@ -86,35 +103,35 @@ const HomePage = () => {
   // 增强的文本内容
   const content = {
     zh: {
-      headline: '🚀 AI 驱动的未来创造者',
-      introduction: '专注于将前沿AI技术转化为实用创新解决方案，用代码构建更智能的世界',
-      contact: '💬 联系我',
-      servicesHeadline: '✨ 核心服务',
+      headline: '你好，我是 Gegarron',
+      introduction: '我热衷于探索 AI 的无限可能，并将其转化为高效、智能的自动化解决方案。作为一名独立开发者，我致力于打造能够真正改变工作与生活方式的创新产品。',
+      contact: '与我联系',
+      servicesHeadline: '✨ 服务范围',
       projects: '🎯 精选作品',
-      productProjects: '🏆 产品项目',
-      openSourceProjects: '🌟 开源贡献',
+      productProjects: '🏆 核心产品',
+      openSourceProjects: '🌟 开源探索',
       footer: '基于 Next.js 构建',
       badges: {
-        aiExpert: 'AI 专家',
-        fullStack: '全栈工程师',
+        aiExpert: 'AI 探索者',
+        fullStack: 'AI 自动化专家',
         independent: '独立开发者',
-        innovator: '技术创新者'
+        innovator: 'AI 工程师'
       }
     },
     en: {
-      headline: '🚀 AI-Powered Future Creator',
-      introduction: 'Transforming cutting-edge AI technology into practical innovative solutions, building a smarter world with code',
-      contact: '💬 Contact',
-      servicesHeadline: '✨ Core Services',
+      headline: "Hi, I'm Gegarron",
+      introduction: "I'm passionate about exploring the infinite possibilities of AI and transforming them into efficient, intelligent automation solutions. As an independent developer, I am dedicated to building innovative products that truly change the way we work and live.",
+      contact: 'Contact Me',
+      servicesHeadline: '✨ What I Do',
       projects: '🎯 Featured Works',
-      productProjects: '🏆 Product Projects',
+      productProjects: '🏆 Core Products',
       openSourceProjects: '🌟 Open Source',
       footer: 'Built with Next.js',
       badges: {
-        aiExpert: 'AI Expert',
-        fullStack: 'Full-Stack Engineer',
+        aiExpert: 'AI Explorer',
+        fullStack: 'AI Automation Expert',
         independent: 'Independent Developer',
-        innovator: 'Tech Innovator'
+        innovator: 'AI Engineer'
       }
     }
   }
@@ -176,13 +193,23 @@ const HomePage = () => {
         >
           <div className="flex items-center space-x-3">
             <motion.button
-              onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+              onClick={() => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')}
               className="p-3 rounded-xl bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm hover:bg-white/90 dark:hover:bg-gray-700/90 transition-all duration-300 shadow-lg hover:shadow-xl border border-white/20 dark:border-gray-700/50"
               title={theme === 'dark' ? '切换到亮色模式' : '切换到暗色模式'}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              {theme === 'dark' ? <Sun size={20} className="text-yellow-500" /> : <Moon size={20} className="text-blue-600" />}
+              <AnimatePresence mode="wait" initial={false}>
+                <motion.div
+                  key={resolvedTheme}
+                  initial={{ y: -20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  exit={{ y: 20, opacity: 0 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  {resolvedTheme === 'dark' ? <Sun size={20} className="text-yellow-500" /> : <Moon size={20} className="text-blue-600" />}
+                </motion.div>
+              </AnimatePresence>
             </motion.button>
             
             <motion.button 
@@ -218,35 +245,13 @@ const HomePage = () => {
           animate="visible"
         >
           <motion.div variants={itemVariants} className="mb-12">
-            <motion.div 
-              className="w-32 h-32 mx-auto mb-8 relative"
-              variants={floatingVariants}
-              initial="initial"
-              animate="animate"
-            >
-              <div className="w-full h-full rounded-full bg-gradient-to-br from-blue-500 via-purple-500 to-indigo-600 flex items-center justify-center text-white text-3xl font-bold shadow-2xl">
-                {name.charAt(0)}
-              </div>
-              <motion.div
-                className="absolute -inset-2 rounded-full bg-gradient-to-r from-blue-400 to-purple-600 opacity-75 blur-lg"
-                animate={{
-                  scale: [1, 1.1, 1],
-                  opacity: [0.7, 0.9, 0.7],
-                }}
-                transition={{
-                  duration: 3,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-              />
-            </motion.div>
-            
+           
             <motion.h1 
               className="text-5xl md:text-7xl font-black text-gray-900 dark:text-white mb-6 tracking-tight"
               variants={itemVariants}
             >
               <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent">
-                {name}
+                {t.headline}
               </span>
             </motion.h1>
             
@@ -267,12 +272,7 @@ const HomePage = () => {
               ))}
             </motion.div>
             
-            <motion.p 
-              className="text-2xl md:text-3xl text-gray-700 dark:text-gray-300 mb-8 max-w-4xl mx-auto font-medium leading-relaxed"
-              variants={itemVariants}
-            >
-              {t.headline}
-            </motion.p>
+           
             
             <motion.p 
               className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed"
@@ -282,28 +282,49 @@ const HomePage = () => {
             </motion.p>
           </motion.div>
 
-          {/* 增强的社交链接 */}
-          <motion.div variants={itemVariants} className="flex justify-center space-x-6">
+          {/* 增强的社交链接 - 倾斜玻璃版本 */}
+          <motion.div variants={itemVariants} className="flex justify-center items-center space-x-6">
             {socialLinks.map((link, index) => {
-              let IconComponent = Github
-              if (link.name === 'X') IconComponent = ExternalLink
-              if (link.name === 'Wechat') IconComponent = Mail
+              let IconComponent;
+              let hoverColorClass = '';
+              switch (link.icon) {
+                case 'github': IconComponent = Github; hoverColorClass = 'group-hover:text-black dark:group-hover:text-white'; break;
+                case 'x': IconComponent = Twitter; hoverColorClass = 'group-hover:text-blue-500'; break;
+                case 'wechat': IconComponent = MessageCircle; hoverColorClass = 'group-hover:text-green-500'; break;
+                case 'facebook': IconComponent = Facebook; hoverColorClass = 'group-hover:text-blue-600'; break;
+                default: IconComponent = ExternalLink; hoverColorClass = 'group-hover:text-gray-500';
+              }
               
               return (
                 <motion.div
                   key={link.name}
                   whileHover={{ scale: 1.1, y: -5 }}
-                  whileTap={{ scale: 0.95 }}
-                  transition={{ delay: index * 0.1 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 15 }}
                 >
                   <Link
                     href={link.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm hover:bg-white dark:hover:bg-gray-700 rounded-xl transition-all duration-300 group shadow-lg hover:shadow-xl  border-white/20 dark:border-gray-700/50"
+                    className="group relative block p-4 rounded-full overflow-hidden bg-white/50 dark:bg-gray-800/50 backdrop-blur-lg shadow-lg border border-white/30 dark:border-gray-700/60 transform transition-all duration-300 hover:shadow-2xl"
                     title={link.name}
                   >
-                    <IconComponent size={24} className="group-hover:scale-110 transition-transform text-gray-700 dark:text-gray-300" />
+                    {/* 倾斜的背景 */}
+                    <div className="absolute inset-0 bg-white/20 dark:bg-gray-900/20 transform -skew-y-12 z-0"></div>
+
+                    {/* 悬浮微光 */}
+                    <div className="absolute inset-0 z-10 overflow-hidden">
+                      <motion.div 
+                        className="absolute -top-full -left-12 w-24 h-[400%] bg-white/30 dark:bg-white/10 opacity-50 transform -skew-x-12"
+                        initial={{ x: '-200%' }}
+                        whileHover={{ x: '200%' }}
+                        transition={{ duration: 0.8, ease: "easeInOut" }}
+                      />
+                    </div>
+                    
+                    {/* 图标 */}
+                    <div className="relative z-20">
+                      <IconComponent size={24} className={`text-gray-700 dark:text-gray-300 transition-colors duration-300 ${hoverColorClass}`} />
+                    </div>
                   </Link>
                 </motion.div>
               )
@@ -361,145 +382,105 @@ const HomePage = () => {
         </motion.section>
 
         {/* 增强的项目展示 */}
-        <motion.section
-          className="mb-20"
+        <motion.section 
+          id="projects"
+          className="mb-32"
           variants={containerVariants}
           initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
+          animate="visible"
         >
-          <motion.h2 
-            variants={itemVariants}
-            className="text-4xl md:text-5xl font-bold text-center mb-16"
-          >
-            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              {t.projects}
-            </span>
+          <motion.h2 className="text-4xl font-bold text-center mb-16 text-gray-800 dark:text-white" variants={itemVariants}>
+            <span className="bg-gradient-to-r from-teal-500 to-cyan-500 bg-clip-text text-transparent">{t.productProjects}</span>
           </motion.h2>
-          
-          {/* 产品项目 */}
-          {projects.length > 0 && (
-            <motion.div className="mb-16" variants={itemVariants}>
-              <h3 className="text-2xl font-bold text-gray-800 dark:text-gray-200 mb-8 text-center">
-                {t.productProjects}
-              </h3>
-              <div className="grid md:grid-cols-2 gap-8">
-                {projects.map((project: ProjectItemType, index: number) => (
-                  <motion.div
-                    key={index}
-                    variants={itemVariants}
-                    className="group p-8 bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 border border-white/20 dark:border-gray-700/50"
-                    whileHover={{ y: -8, scale: 1.02 }}
-                  >
-                    <div className="flex items-start justify-between mb-6">
-                      <div className="flex items-center space-x-4">
-                        {project.logo && (
-                          <motion.div
-                            className="relative"
-                            whileHover={{ scale: 1.1, rotate: 5 }}
-                          >
-                            <Image
-                              src={project.logo}
-                              alt={project.name}
-                              width={48}
-                              height={48}
-                              className="rounded-xl shadow-md"
-                            />
-                          </motion.div>
-                        )}
-                        <div>
-                          <h4 className="text-xl font-bold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                            {project.name}
-                          </h4>
-                          {project.category && (
-                            <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
-                              {project.category.join(' • ')}
-                            </p>
-                          )}
-                        </div>
-                      </div>
-                      
-                      <motion.div
-                        whileHover={{ scale: 1.1 }}
-                        whileTap={{ scale: 0.9 }}
-                      >
-                        <Link
-                          href={project.link.href}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="bg-blue-100 dark:bg-blue-900/50 hover:bg-blue-200 dark:hover:bg-blue-800/70 rounded-lg transition-colors"
-                        >
-                          <ExternalLink size={20} className="text-blue-600 dark:text-blue-400" />
-                        </Link>
-                      </motion.div>
-                    </div>
-                    
-                    <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
-                      {project.description}
-                    </p>
-                    
-                    {project.techStack && (
-                      <div className="flex flex-wrap gap-2">
-                        {project.techStack.map((tech: string, techIndex: number) => (
-                          <motion.span
-                            key={tech}
-                            className="px-3 py-1 text-xs font-medium bg-blue-100 dark:bg-blue-900/50 text-blue-700 dark:text-blue-300 rounded-full"
-                            whileHover={{ scale: 1.05 }}
-                            transition={{ delay: techIndex * 0.05 }}
-                          >
-                            {tech}
-                          </motion.span>
-                        ))}
-                      </div>
-                    )}
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
-          )}
 
-          {/* 开源项目 */}
-          {githubProjects.length > 0 && (
-            <motion.div variants={itemVariants}>
-              <h3 className="text-2xl font-bold text-gray-800 dark:text-gray-200 mb-8 text-center">
-                {t.openSourceProjects}
-              </h3>
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {githubProjects.map((project: ProjectItemType, index: number) => (
-                  <motion.div
-                    key={index}
-                    variants={itemVariants}
-                    className="group p-6 bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-white/20 dark:border-gray-700/50"
-                    whileHover={{ y: -4, scale: 1.02 }}
-                  >
-                    <div className="flex items-start justify-between mb-4">
-                      <h4 className="text-lg font-semibold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                        {project.name}
-                      </h4>
-                      
-                      <motion.div
-                        whileHover={{ scale: 1.1 }}
-                        whileTap={{ scale: 0.9 }}
-                      >
-                        <Link
-                          href={project.link.href}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className=" bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 rounded-lg transition-colors"
-                        >
-                          <Github size={16} className="text-gray-600 dark:text-gray-400" />
-                        </Link>
-                      </motion.div>
-                    </div>
-                    
-                    <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
-                      {project.description}
-                    </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+            {projects.map((project: ProjectItemType, index: number) => (
+              <motion.div
+                key={index}
+                className="group relative flex flex-col rounded-2xl bg-white/60 dark:bg-gray-800/60 backdrop-blur-md border border-gray-200/50 dark:border-gray-700/50 shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden"
+                variants={itemVariants}
+                whileHover={{ y: -8 }}
+              >
+                <div className="relative w-full h-48">
+                  <Image
+                    src={project.logo || '/images/placeholder.png'}
+                    alt={`${project.name} logo`}
+                    layout="fill"
+                    objectFit="cover"
+                    className="transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                </div>
+                
+                <div className="p-6 flex flex-col flex-grow">
+                  <h3 className="text-2xl font-bold mb-3 text-gray-900 dark:text-white">{project.name}</h3>
+                  <p className="text-gray-600 dark:text-gray-300 mb-4 flex-grow">{project.description}</p>
+                  
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    {project.techStack?.map((tech, i) => (
+                      <span key={i} className="px-3 py-1 text-xs font-medium text-blue-700 bg-blue-100 rounded-full dark:bg-blue-900/50 dark:text-blue-300">{tech}</span>
+                    ))}
+                  </div>
+
+                  <motion.div className="mt-auto">
+                    <Link href={project.link.href} target="_blank" rel="noopener noreferrer">
+                      <span className="inline-flex items-center justify-center w-full px-6 py-3 font-semibold text-white bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg shadow-md hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 group-hover:shadow-xl">
+                        {locale === 'zh' ? '访问网站' : 'Visit Site'}
+                        <ExternalLink size={18} className="ml-2" />
+                      </span>
+                    </Link>
                   </motion.div>
-                ))}
-              </div>
-            </motion.div>
-          )}
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.section>
+
+        {/* 开源项目 */}
+        <motion.section 
+          id="opensource"
+          className="mb-32"
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+        >
+          <motion.h2 className="text-4xl font-bold text-center mb-16 text-gray-800 dark:text-white" variants={itemVariants}>
+            <span className="bg-gradient-to-r from-green-500 to-emerald-500 bg-clip-text text-transparent">{t.openSourceProjects}</span>
+          </motion.h2>
+
+          <div className="space-y-8">
+            {githubProjects.map((project: ProjectItemType, index: number) => (
+              <motion.div
+                key={index}
+                variants={itemVariants}
+                whileHover={{ y: -5, boxShadow: '0 10px 20px rgba(0,0,0,0.1)' }}
+                className="group relative p-6 rounded-2xl bg-white/60 dark:bg-gray-800/60 backdrop-blur-md border border-gray-200/50 dark:border-gray-700/50 shadow-lg hover:shadow-xl transition-all duration-300"
+              >
+                <div className="flex flex-col md:flex-row md:items-center justify-between">
+                  <div className="flex-grow mb-4 md:mb-0">
+                    <Link href={project.link.href} target="_blank" rel="noopener noreferrer" className="inline-block">
+                      <h3 className="text-xl font-bold text-gray-900 dark:text-white group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors duration-300">
+                        {project.name}
+                      </h3>
+                    </Link>
+                    <p className="text-gray-600 dark:text-gray-300 mt-2">{project.description}</p>
+                    <div className="flex flex-wrap gap-2 mt-3">
+                      {project.techStack?.map((tech, i) => (
+                        <span key={i} className="px-2 py-1 text-xs font-medium text-green-700 bg-green-100 rounded-full dark:bg-green-900/50 dark:text-green-300">{tech}</span>
+                      ))}
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-center space-x-6 flex-shrink-0">
+                   
+                    <Link href={project.link.href} target="_blank" rel="noopener noreferrer" className="hidden md:inline-block">
+                      <Github size={24} className="text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors duration-300" />
+                    </Link>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </motion.section>
 
         {/* 增强的页脚 */}
