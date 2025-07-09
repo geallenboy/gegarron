@@ -113,9 +113,9 @@ const HomePage = () => {
       footer: '基于 Next.js 构建',
       badges: {
         aiExpert: 'AI 探索者',
-        fullStack: 'AI 自动化专家',
+        fullStack: 'AI 自动化玩家',
         independent: '独立开发者',
-        innovator: 'AI 工程师'
+        innovator: '全栈工程师'
       }
     },
     en: {
@@ -129,9 +129,9 @@ const HomePage = () => {
       footer: 'Built with Next.js',
       badges: {
         aiExpert: 'AI Explorer',
-        fullStack: 'AI Automation Expert',
+        fullStack: 'AI Automation Player',
         independent: 'Independent Developer',
-        innovator: 'AI Engineer'
+        innovator: 'Full Stack Engineer'
       }
     }
   }
