@@ -137,6 +137,18 @@ export const projectsList: any = {
       "tags": ["AI", "N8N"]
     },
     {
+      "name": "A creative tool focused on drawing functions", 
+      "description": "A creative tool focused on drawing functions, integrating powerful drawing capabilities and folder management, providing users with an efficient graphic creation experience. Supports cloud storage and local caching to ensure that your creations never disappear.",
+      "link": {
+        "href": "https://drawing.ailinksall.com/",
+        "label": "drawing.ailinksall.com"
+      },
+      "logo": "/1.webp",
+      "category": ["Website", "Drawing"],
+      "techStack": ["Next.js", "TailwindCSS", "Shadcn/UI", "Vercel"],
+      "tags": ["Drawing", "AI"]
+    },
+    {
       "name": "AILinksAI",
       "description": "Save cognitive energy, provide deep insights, empower users with foresight, and drive user growth.",
       "link": {
@@ -164,6 +176,18 @@ export const projectsList: any = {
       "tags": ["AI", "N8N"]
     },
     {
+      "name": "专注于画图功能的创作工具",
+      "description": "Drawing是一个专注于画图功能的创作工具，集成了强大的画图能力和文件夹管理功能，为用户提供高效的图形创作体验。支持云端存储和本地缓存，确保您的创作永不丢失。",
+      "link": {
+        "href": "https://drawing.ailinksall.com/",
+        "label": "drawing.ailinksall.com"
+      },
+      "logo": "/1.webp",
+      "category": ["网站", "画图"],
+      "techStack": ["Next.js", "TailwindCSS", "Shadcn/UI", "Vercel"],
+      "tags": ["Drawing"]
+    },
+    {
       "name": "AILinksAI - AI导航与洞察",
       "description": "专为 AI 从业者和爱好者打造的导航平台。它不仅是一个链接集合，更是知识发现引擎，致力于节省您的认知精力，并提供富有远见的深度洞察。",
       "link": {
@@ -180,7 +204,13 @@ export const projectsList: any = {
 
 export const githubProjectsList: any = {
   en: [
-    
+    {
+      "name": "drawing",
+      "description": "Drawing is a creative tool focused on drawing features, integrating powerful drawing capabilities and folder management, providing users with an efficient graphic creation experience. Supports cloud storage and local caching to ensure that your creations never disappear.",
+      "link": { "href": "https://github.com/geallenboy/drawing" },
+      "techStack": ["Next.js", "TailwindCSS", "Framer Motion"],
+     
+    },
     {
       "name": "ai-n8n",
       "description": "A collection of powerful and plug-and-play n8n workflows, leveraging AI to automate complex tasks and significantly boost your productivity.",
@@ -233,7 +263,13 @@ export const githubProjectsList: any = {
     }
   ],
   zh: [
-   
+    {
+      "name": "drawing",
+      "description": "Drawing是一个专注于画图功能的创作工具，集成了强大的画图能力和文件夹管理功能，为用户提供高效的图形创作体验。支持云端存储和本地缓存，确保您的创作永不丢失。",
+      "link": { "href": "https://github.com/geallenboy/drawing" },
+      "techStack": ["Next.js", "TailwindCSS", "Framer Motion"],
+     
+    },
     {
       "name": "ai-n8n",
       "description": "一系列强大且即插即用的 n8n 工作流集合，利用 AI 实现复杂任务的自动化，极大地提升您的生产力。",
