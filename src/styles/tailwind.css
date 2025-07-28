@@ -83,30 +83,65 @@
 
 /* 工具类 */
 @layer utilities {
-  /* 玻璃形态效果 */
+  /* 增强的玻璃形态效果 */
   .glass {
-    @apply backdrop-blur-sm bg-white/30 dark:bg-black/30 border border-white/20 dark:border-white/10;
+    @apply backdrop-blur-xl bg-white/10 dark:bg-black/10 border border-white/20 dark:border-white/10;
+  }
+  
+  .glass-strong {
+    @apply backdrop-blur-2xl bg-white/20 dark:bg-black/20 border border-white/30 dark:border-white/20;
+  }
+
+  /* 3D效果 */
+  .shadow-3d {
+    box-shadow: 
+      0 10px 20px rgba(0, 0, 0, 0.1),
+      0 6px 6px rgba(0, 0, 0, 0.1),
+      0 0 100px rgba(59, 130, 246, 0.1);
+  }
+  
+  .shadow-3d-hover {
+    box-shadow: 
+      0 20px 40px rgba(0, 0, 0, 0.15),
+      0 10px 10px rgba(0, 0, 0, 0.1),
+      0 0 100px rgba(59, 130, 246, 0.2);
+  }
+
+  /* 渐变边框 */
+  .gradient-border {
+    position: relative;
+    background: linear-gradient(45deg, transparent, transparent);
+    border-radius: 1rem;
+  }
+  
+  .gradient-border::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    padding: 2px;
+    background: linear-gradient(45deg, #3b82f6, #8b5cf6, #ec4899);
+    border-radius: inherit;
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
   }
 
   /* 动画延迟 */
-  .animation-delay-200 {
-    animation-delay: 200ms;
-  }
-  
-  .animation-delay-400 {
-    animation-delay: 400ms;
-  }
-  
-  .animation-delay-600 {
-    animation-delay: 600ms;
-  }
+  .animation-delay-200 { animation-delay: 200ms; }
+  .animation-delay-400 { animation-delay: 400ms; }
+  .animation-delay-600 { animation-delay: 600ms; }
+  .animation-delay-800 { animation-delay: 800ms; }
+  .animation-delay-1000 { animation-delay: 1000ms; }
 
-  /* 文本省略 */
+  /* 文本效果 */
+  .text-glow {
+    text-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+  }
+  
   .text-ellipsis {
     @apply truncate;
   }
 
-  /* 隐藏滚动条但保持滚动功能 */
+  /* 隐藏滚动条 */
   .hide-scrollbar {
     -ms-overflow-style: none;
     scrollbar-width: none;
@@ -114,6 +149,49 @@
   
   .hide-scrollbar::-webkit-scrollbar {
     display: none;
+  }
+
+  /* 磁性效果 */
+  .magnetic {
+    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  
+  .magnetic:hover {
+    transform: scale(1.05) translateY(-2px);
+  }
+
+  /* 脉冲效果 */
+  .pulse-glow {
+    animation: pulse-glow 2s infinite;
+  }
+  
+  @keyframes pulse-glow {
+    0%, 100% {
+      box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
+    }
+    50% {
+      box-shadow: 0 0 40px rgba(59, 130, 246, 0.8);
+    }
+  }
+
+  /* 浮动动画 */
+  .float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+
+  /* 旋转动画 */
+  .rotate-slow {
+    animation: rotate-slow 20s linear infinite;
+  }
+  
+  @keyframes rotate-slow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
   }
 }
 

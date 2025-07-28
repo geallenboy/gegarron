@@ -44,7 +44,7 @@ export const coreServices = {
   zh: [
     {
       title: 'AI 自动化解决方案',
-      description: '深入分析业务流程，为您设计和实现基于 n8n、Make 等平台的定制化 AI 自动化工作流，显著提升效率。',
+      description: '深入分析业务流程，为您设计和实现基于 n8n平台的定制化 AI 自动化工作流，显著提升效率。',
       icon: 'robot'
     },
     {
@@ -137,13 +137,25 @@ export const projectsList: any = {
       "tags": ["AI", "N8N"]
     },
     {
+      "name": "A modern AI SaaS application template",
+      "description": "A modern AI SaaS application template built with Next.js 15, featuring user authentication, payment system, AI features, and a complete admin dashboard.",
+      "link": {
+        "href": "https://aisaas.ailinksall.com/",
+        "label": "aisaas.ailinksall.com"
+      },
+      "logo": "/2.webp",
+      "category": ["Website", "AI SaaS"],
+      "techStack": ["Next.js", "TailwindCSS", "Shadcn/UI", "Vercel"],
+      "tags": ["AI", "SaaS", "AI SaaS"]
+    },
+    {
       "name": "A creative tool focused on drawing functions", 
       "description": "A creative tool focused on drawing functions, integrating powerful drawing capabilities and folder management, providing users with an efficient graphic creation experience. Supports cloud storage and local caching to ensure that your creations never disappear.",
       "link": {
         "href": "https://drawing.ailinksall.com/",
         "label": "drawing.ailinksall.com"
       },
-      "logo": "/1.webp",
+      "logo": "/3.webp",
       "category": ["Website", "Drawing"],
       "techStack": ["Next.js", "TailwindCSS", "Shadcn/UI", "Vercel"],
       "tags": ["Drawing", "AI"]
@@ -155,7 +167,7 @@ export const projectsList: any = {
         "href": "https://ailinksall.com",
         "label": "ailinksall.com"
       },
-      "logo": "/2.jpg",
+      "logo": "/4.png",
       "category": ["Website", "AI Links"],
       "techStack": ["Next.js", "TailwindCSS", "Shadcn/UI", "Vercel"],
       "tags": ["AI", "AILinksAI"]
@@ -176,13 +188,25 @@ export const projectsList: any = {
       "tags": ["AI", "N8N"]
     },
     {
+      "name": "一个现代化的 AI SaaS 应用模板",
+      "description": "一个现代化的 AI SaaS 应用模板，基于 Next.js 15 构建，集成了用户认证、支付系统、AI 功能和完整的管理后台。",
+      "link": {
+        "href": "https://aisaas.ailinksall.com/",
+        "label": "aisaas.ailinksall.com"
+      },
+      "logo": "/2.webp",
+      "category": ["网站", "AI SaaS"],
+      "techStack": ["Next.js", "TailwindCSS", "Shadcn/UI", "Vercel"],
+      "tags": ["AI", "SaaS", "AI SaaS"]
+    },
+    {
       "name": "专注于画图功能的创作工具",
       "description": "Drawing是一个专注于画图功能的创作工具，集成了强大的画图能力和文件夹管理功能，为用户提供高效的图形创作体验。支持云端存储和本地缓存，确保您的创作永不丢失。",
       "link": {
         "href": "https://drawing.ailinksall.com/",
         "label": "drawing.ailinksall.com"
       },
-      "logo": "/1.webp",
+      "logo": "/3.webp",
       "category": ["网站", "画图"],
       "techStack": ["Next.js", "TailwindCSS", "Shadcn/UI", "Vercel"],
       "tags": ["Drawing"]
@@ -194,7 +218,7 @@ export const projectsList: any = {
         "href": "https://ailinksall.com",
         "label": "ailinksall.com"
       },
-      "logo": "/2.jpg",
+      "logo": "/4.png",
       "category": ["网站", "AILinksAI"],
       "techStack": ["Next.js", "TailwindCSS", "Shadcn/UI", "Vercel"],
       "tags": ["AI", "AILinksAI"]
@@ -204,6 +228,13 @@ export const projectsList: any = {
 
 export const githubProjectsList: any = {
   en: [
+    {
+      "name": "ai-saas",
+      "description": "A modern AI SaaS application template built with Next.js 15, featuring user authentication, payment system, AI features, and a complete admin dashboard.",
+      "link": { "href": "https://github.com/geallenboy/ai-saas-template" },
+      "techStack": ["Next.js", "TailwindCSS", "Framer Motion"],
+     
+    },
     {
       "name": "drawing",
       "description": "Drawing is a creative tool focused on drawing features, integrating powerful drawing capabilities and folder management, providing users with an efficient graphic creation experience. Supports cloud storage and local caching to ensure that your creations never disappear.",
@@ -263,6 +294,13 @@ export const githubProjectsList: any = {
     }
   ],
   zh: [
+    {
+      "name": "ai-saas",
+      "description": "一个现代化的 AI SaaS 应用模板，基于 Next.js 15 构建，集成了用户认证、支付系统、AI 功能和完整的管理后台。",
+      "link": { "href": "https://github.com/geallenboy/ai-saas-template" },
+      "techStack": ["Next.js", "TailwindCSS", "Framer Motion"],
+     
+    },
     {
       "name": "drawing",
       "description": "Drawing是一个专注于画图功能的创作工具，集成了强大的画图能力和文件夹管理功能，为用户提供高效的图形创作体验。支持云端存储和本地缓存，确保您的创作永不丢失。",
