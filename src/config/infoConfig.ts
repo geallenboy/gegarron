@@ -93,12 +93,12 @@ export const socialLinks: Array<SocialLinkType> = [
   {
     name: 'Wechat',
     icon: 'wechat',
-    href: '#' // Placeholder for Wechat QR code modal
+    href: '#wechat-modal' // Will trigger modal
   },
   {
-    name: 'Facebook',
-    icon: 'facebook',
-    href: 'https://www.facebook.com' // Replace with your actual Facebook profile
+    name: 'WeChat Official Account',
+    icon: 'wechat-official',
+    href: '#wechat-official-modal' // Will trigger official account modal
   }
 ]
 

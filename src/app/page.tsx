@@ -36,7 +36,11 @@ import {
   Coffee,
   Lightbulb,
   Target,
-  Briefcase
+  Briefcase,
+  X,
+  Copy,
+  Check,
+  Users
 } from 'lucide-react'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -77,31 +81,6 @@ const itemVariants = {
   }
 }
 
-const floatingVariants = {
-  initial: { y: 0, rotate: 0 },
-  animate: {
-    y: [-20, 20, -20],
-    rotate: [-5, 5, -5],
-    transition: {
-      duration: 6,
-      repeat: Infinity,
-      ease: "easeInOut" as const
-    }
-  }
-}
-
-const pulseVariants = {
-  initial: { scale: 1, opacity: 0.7 },
-  animate: {
-    scale: [1, 1.05, 1],
-    opacity: [0.7, 1, 0.7],
-    transition: {
-      duration: 2,
-      repeat: Infinity,
-      ease: "easeInOut" as const
-    }
-  }
-}
 
 const magneticVariants = {
   rest: { scale: 1 },
@@ -218,6 +197,330 @@ const SkillOrb = ({ skill, index }: { skill: string, index: number }) => {
   )
 }
 
+// 微信公众号弹窗组件
+const WechatOfficialModal = ({ isOpen, onClose, locale }: { isOpen: boolean, onClose: () => void, locale: string }) => {
+  const [copied, setCopied] = useState(false)
+  const officialAccountId = "GeGarron"
+
+  const copyToClipboard = async () => {
+    try {
+      await navigator.clipboard.writeText(officialAccountId)
+      setCopied(true)
+      setTimeout(() => setCopied(false), 2000)
+    } catch (err) {
+      console.error('Failed to copy: ', err)
+    }
+  }
+
+  if (!isOpen) return null
+
+  return (
+    <AnimatePresence>
+      <motion.div
+        className="fixed inset-0 z-[9999] flex items-center justify-center p-4"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        onClick={onClose}
+      >
+        {/* 背景遮罩 */}
+        <motion.div
+          className="absolute inset-0 bg-black/50 backdrop-blur-sm"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+        />
+
+        {/* 弹窗内容 */}
+        <motion.div
+          className="relative bg-white/95 dark:bg-gray-900/95 backdrop-blur-xl rounded-3xl p-8 max-w-md w-full mx-4 border border-white/20 dark:border-white/10 shadow-2xl"
+          initial={{ scale: 0.8, opacity: 0, y: 50 }}
+          animate={{ scale: 1, opacity: 1, y: 0 }}
+          exit={{ scale: 0.8, opacity: 0, y: 50 }}
+          transition={{ type: "spring", stiffness: 300, damping: 30 }}
+          onClick={(e) => e.stopPropagation()}
+        >
+          {/* 关闭按钮 */}
+          <motion.button
+            onClick={onClose}
+            className="absolute top-4 right-4 p-2 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+          >
+            <X size={20} className="text-gray-600 dark:text-gray-400" />
+          </motion.button>
+
+          {/* 微信公众号图标 */}
+          <motion.div
+            className="flex justify-center mb-6"
+            initial={{ scale: 0 }}
+            animate={{ scale: 1 }}
+            transition={{ delay: 0.2, type: "spring" }}
+          >
+            <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center shadow-lg">
+              <Users size={32} className="text-white" />
+            </div>
+          </motion.div>
+
+          {/* 标题 */}
+          <motion.h3
+            className="text-2xl font-bold text-center text-gray-900 dark:text-white mb-2"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3 }}
+          >
+            {locale === 'zh' ? '关注微信公众号' : 'Follow WeChat Official Account'}
+          </motion.h3>
+
+          <motion.p
+            className="text-center text-gray-600 dark:text-gray-400 mb-8"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4 }}
+          >
+            {locale === 'zh' ? '扫描二维码或搜索公众号关注我们' : 'Scan QR code or search official account to follow us'}
+          </motion.p>
+
+          {/* 二维码区域 */}
+          <motion.div
+            className="bg-gray-100 dark:bg-gray-800 rounded-2xl p-6 mb-6 flex flex-col items-center"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.5 }}
+          >
+            <div className="w-40 h-40 rounded-xl overflow-hidden mb-4 shadow-lg">
+              <Image
+                src="/mpweixin.jpg"
+                alt="WeChat Official Account QR Code"
+                width={160}
+                height={160}
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <p className="text-sm text-gray-500 dark:text-gray-400 text-center">
+              {locale === 'zh' ? '扫描关注公众号' : 'Scan to follow official account'}
+            </p>
+          </motion.div>
+
+          {/* 公众号名称 */}
+          <motion.div
+            className="bg-gray-50 dark:bg-gray-800/50 rounded-xl p-4 mb-6"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6 }}
+          >
+            <div className="flex items-center justify-between">
+              <div>
+                <p className="text-sm text-gray-500 dark:text-gray-400 mb-1">
+                  {locale === 'zh' ? '公众号名称' : 'Official Account Name'}
+                </p>
+                <p className="text-lg font-semibold text-gray-900 dark:text-white">
+                  {officialAccountId}
+                </p>
+              </div>
+              <motion.button
+                onClick={copyToClipboard}
+                className="flex items-center space-x-2 px-4 py-2 bg-green-500 hover:bg-green-600 text-white rounded-lg transition-colors"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                {copied ? (
+                  <>
+                    <Check size={16} />
+                    <span className="text-sm">{locale === 'zh' ? '已复制' : 'Copied'}</span>
+                  </>
+                ) : (
+                  <>
+                    <Copy size={16} />
+                    <span className="text-sm">{locale === 'zh' ? '复制' : 'Copy'}</span>
+                  </>
+                )}
+              </motion.button>
+            </div>
+          </motion.div>
+
+          {/* 提示信息 */}
+          <motion.div
+            className="text-center"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.7 }}
+          >
+            <p className="text-sm text-gray-500 dark:text-gray-400">
+              {locale === 'zh' 
+                ? '关注公众号获取最新 AI 技术分享和项目动态' 
+                : 'Follow to get the latest AI technology sharing and project updates'
+              }
+            </p>
+          </motion.div>
+        </motion.div>
+      </motion.div>
+    </AnimatePresence>
+  )
+}
+
+// 微信弹窗组件
+const WechatModal = ({ isOpen, onClose, locale }: { isOpen: boolean, onClose: () => void, locale: string }) => {
+  const [copied, setCopied] = useState(false)
+  const wechatId = "gegarron"
+
+  const copyToClipboard = async () => {
+    try {
+      await navigator.clipboard.writeText(wechatId)
+      setCopied(true)
+      setTimeout(() => setCopied(false), 2000)
+    } catch (err) {
+      console.error('Failed to copy: ', err)
+    }
+  }
+
+  if (!isOpen) return null
+
+  return (
+    <AnimatePresence>
+      <motion.div
+        className="fixed inset-0 z-[9999] flex items-center justify-center p-4"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        onClick={onClose}
+      >
+        {/* 背景遮罩 */}
+        <motion.div
+          className="absolute inset-0 bg-black/50 backdrop-blur-sm"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+        />
+
+        {/* 弹窗内容 */}
+        <motion.div
+          className="relative bg-white/95 dark:bg-gray-900/95 backdrop-blur-xl rounded-3xl p-8 max-w-md w-full mx-4 border border-white/20 dark:border-white/10 shadow-2xl"
+          initial={{ scale: 0.8, opacity: 0, y: 50 }}
+          animate={{ scale: 1, opacity: 1, y: 0 }}
+          exit={{ scale: 0.8, opacity: 0, y: 50 }}
+          transition={{ type: "spring", stiffness: 300, damping: 30 }}
+          onClick={(e) => e.stopPropagation()}
+        >
+          {/* 关闭按钮 */}
+          <motion.button
+            onClick={onClose}
+            className="absolute top-4 right-4 p-2 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+          >
+            <X size={20} className="text-gray-600 dark:text-gray-400" />
+          </motion.button>
+
+          {/* 微信图标 */}
+          <motion.div
+            className="flex justify-center mb-6"
+            initial={{ scale: 0 }}
+            animate={{ scale: 1 }}
+            transition={{ delay: 0.2, type: "spring" }}
+          >
+            <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center shadow-lg">
+              <MessageCircle size={32} className="text-white" />
+            </div>
+          </motion.div>
+
+          {/* 标题 */}
+          <motion.h3
+            className="text-2xl font-bold text-center text-gray-900 dark:text-white mb-2"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3 }}
+          >
+            {locale === 'zh' ? '添加微信好友' : 'Add WeChat Friend'}
+          </motion.h3>
+
+          <motion.p
+            className="text-center text-gray-600 dark:text-gray-400 mb-8"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4 }}
+          >
+            {locale === 'zh' ? '扫描二维码或复制微信号添加好友' : 'Scan QR code or copy WeChat ID to add friend'}
+          </motion.p>
+
+          {/* 二维码区域 */}
+          <motion.div
+            className="bg-gray-100 dark:bg-gray-800 rounded-2xl p-6 mb-6 flex flex-col items-center"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.5 }}
+          >
+            <div className="w-40 h-40 rounded-xl overflow-hidden mb-4 shadow-lg">
+              <Image
+                src="/weixin.png"
+                alt="WeChat Personal QR Code"
+                width={160}
+                height={160}
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <p className="text-sm text-gray-500 dark:text-gray-400 text-center">
+              {locale === 'zh' ? '扫描添加微信好友' : 'Scan to add WeChat friend'}
+            </p>
+          </motion.div>
+
+          {/* 微信号 */}
+          <motion.div
+            className="bg-gray-50 dark:bg-gray-800/50 rounded-xl p-4 mb-6"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6 }}
+          >
+            <div className="flex items-center justify-between">
+              <div>
+                <p className="text-sm text-gray-500 dark:text-gray-400 mb-1">
+                  {locale === 'zh' ? '微信号' : 'WeChat ID'}
+                </p>
+                <p className="text-lg font-mono font-semibold text-gray-900 dark:text-white">
+                  {wechatId}
+                </p>
+              </div>
+              <motion.button
+                onClick={copyToClipboard}
+                className="flex items-center space-x-2 px-4 py-2 bg-green-500 hover:bg-green-600 text-white rounded-lg transition-colors"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                {copied ? (
+                  <>
+                    <Check size={16} />
+                    <span className="text-sm">{locale === 'zh' ? '已复制' : 'Copied'}</span>
+                  </>
+                ) : (
+                  <>
+                    <Copy size={16} />
+                    <span className="text-sm">{locale === 'zh' ? '复制' : 'Copy'}</span>
+                  </>
+                )}
+              </motion.button>
+            </div>
+          </motion.div>
+
+          {/* 提示信息 */}
+          <motion.div
+            className="text-center"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.7 }}
+          >
+            <p className="text-sm text-gray-500 dark:text-gray-400">
+              {locale === 'zh' 
+                ? '欢迎添加微信，一起探讨 AI 技术与项目合作' 
+                : 'Welcome to add WeChat to discuss AI technology and project collaboration'
+              }
+            </p>
+          </motion.div>
+        </motion.div>
+      </motion.div>
+    </AnimatePresence>
+  )
+}
+
 const HomePage = () => {
   const { theme, setTheme, resolvedTheme } = useTheme()
   const [mounted, setMounted] = useState(false)
@@ -225,6 +528,8 @@ const HomePage = () => {
   const [currentSection, setCurrentSection] = useState(0)
   const [isPlaying, setIsPlaying] = useState(true)
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
+  const [showWechatModal, setShowWechatModal] = useState(false)
+  const [showWechatOfficialModal, setShowWechatOfficialModal] = useState(false)
   const containerRef = useRef<HTMLDivElement>(null)
 
   const { scrollYProgress } = useScroll({
@@ -260,7 +565,7 @@ const HomePage = () => {
   // 全新的内容结构
   const content = {
     zh: {
-      headline: '你好，我是 Gegarron',
+      headline: '你好，我是 GeGarron',
       tagline: '用 AI 重新定义可能性',
       introduction: '我是一名充满激情的 AI 探索者和独立开发者，专注于将前沿的人工智能技术转化为实用的自动化解决方案。我相信技术的力量在于改善人们的生活，让复杂的工作变得简单而高效。',
       contact: '开始合作',
@@ -275,7 +580,7 @@ const HomePage = () => {
         experience: '年经验',
         coffee: '杯咖啡'
       },
-      skills: ['独立开发者','AI 自动化','AI 探索者','全栈工程师','创业者'],
+      skills: ['独立开发者','AI 自动化','AI 探索者','全栈工程师'],
       badges: {
         aiExpert: 'AI 探索者',
         fullStack: 'AI 自动化专家',
@@ -284,7 +589,7 @@ const HomePage = () => {
       }
     },
     en: {
-      headline: "Hi, I'm Gegarron",
+      headline: "Hi, I'm GeGarron",
       tagline: 'Redefining Possibilities with AI',
       introduction: "I'm a passionate AI explorer and independent developer, focused on transforming cutting-edge artificial intelligence into practical automation solutions. I believe technology's power lies in improving people's lives, making complex work simple and efficient.",
       contact: 'Start Collaboration',
@@ -299,7 +604,7 @@ const HomePage = () => {
         experience: 'Years Experience',
         coffee: 'Cups of Coffee'
       },
-      skills: ['Independent Developer', 'AI Automation', 'AI Explorer', 'Full Stack Engineer', 'Entrepreneur'],
+      skills: ['Independent Developer', 'AI Automation', 'AI Explorer', 'Full Stack Engineer'],
       badges: {
         aiExpert: 'AI Explorer',
         fullStack: 'AI Automation Expert',
@@ -565,13 +870,23 @@ const HomePage = () => {
                   IconComponent = MessageCircle;
                   gradientClass = 'from-green-400 to-green-600';
                   break;
-                case 'facebook':
-                  IconComponent = Facebook;
-                  gradientClass = 'from-blue-500 to-blue-700';
+                case 'wechat-official':
+                  IconComponent = Users;
+                  gradientClass = 'from-green-500 to-green-700';
                   break;
                 default:
                   IconComponent = ExternalLink;
                   gradientClass = 'from-gray-500 to-gray-700';
+              }
+
+              const handleClick = (e: React.MouseEvent) => {
+                if (link.icon === 'wechat') {
+                  e.preventDefault()
+                  setShowWechatModal(true)
+                } else if (link.icon === 'wechat-official') {
+                  e.preventDefault()
+                  setShowWechatOfficialModal(true)
+                }
               }
 
               return (
@@ -583,11 +898,12 @@ const HomePage = () => {
                   whileTap={{ scale: 0.9 }}
                 >
                   <Link
-                    href={link.href}
-                    target="_blank"
+                    href={link.icon === 'wechat' || link.icon === 'wechat-official' ? '#' : link.href}
+                    target={link.icon === 'wechat' || link.icon === 'wechat-official' ? '_self' : '_blank'}
                     rel="noopener noreferrer"
                     className="group relative block p-6 rounded-2xl overflow-hidden bg-white/10 dark:bg-black/10 backdrop-blur-xl border border-white/20 dark:border-white/10 shadow-2xl hover:shadow-3xl transition-all duration-500"
                     title={link.name}
+                    onClick={handleClick}
                   >
                     {/* 3D背景效果 */}
                     <motion.div
@@ -1133,8 +1449,18 @@ const HomePage = () => {
                   case 'github': IconComponent = Github; break;
                   case 'x': IconComponent = Twitter; break;
                   case 'wechat': IconComponent = MessageCircle; break;
-                  case 'facebook': IconComponent = Facebook; break;
+                  case 'wechat-official': IconComponent = Users; break;
                   default: IconComponent = ExternalLink;
+                }
+
+                const handleFooterClick = (e: React.MouseEvent) => {
+                  if (link.icon === 'wechat') {
+                    e.preventDefault()
+                    setShowWechatModal(true)
+                  } else if (link.icon === 'wechat-official') {
+                    e.preventDefault()
+                    setShowWechatOfficialModal(true)
+                  }
                 }
 
                 return (
@@ -1144,10 +1470,11 @@ const HomePage = () => {
                     whileTap={{ scale: 0.9 }}
                   >
                     <Link
-                      href={link.href}
-                      target="_blank"
+                      href={link.icon === 'wechat' || link.icon === 'wechat-official' ? '#' : link.href}
+                      target={link.icon === 'wechat' || link.icon === 'wechat-official' ? '_self' : '_blank'}
                       rel="noopener noreferrer"
                       className="flex items-center justify-center w-12 h-12 bg-white/10 dark:bg-black/10 backdrop-blur-sm rounded-full text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-all duration-300 border border-white/20 dark:border-white/10"
+                      onClick={handleFooterClick}
                     >
                       <IconComponent size={20} />
                     </Link>
@@ -1176,6 +1503,20 @@ const HomePage = () => {
           </div>
         </motion.footer>
       </div>
+
+      {/* 微信弹窗 */}
+      <WechatModal 
+        isOpen={showWechatModal} 
+        onClose={() => setShowWechatModal(false)} 
+        locale={locale} 
+      />
+
+      {/* 微信公众号弹窗 */}
+      <WechatOfficialModal 
+        isOpen={showWechatOfficialModal} 
+        onClose={() => setShowWechatOfficialModal(false)} 
+        locale={locale} 
+      />
     </div>
   )
 }
