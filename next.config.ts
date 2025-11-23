@@ -1,8 +1,6 @@
-import createNextIntlPlugin from 'next-intl/plugin'
-const withNextIntl = createNextIntlPlugin()
+import type { NextConfig } from 'next';
 
-/** @type {import('next').NextConfig} */
-const nextConfig = {
+const nextConfig: NextConfig = {
   output: 'standalone',
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'mdx'],
   images: {
@@ -22,6 +20,6 @@ const nextConfig = {
       },
     ],
   },
-}
+};
 
-export default withNextIntl(nextConfig)
+export default nextConfig;

@@ -3,18 +3,13 @@
  * 用于在网站头部添加验证meta标签
  */
 export const GoogleSearchConsole = () => {
-  const verificationCode = process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
+  const verificationCode = process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION;
 
   if (!verificationCode) {
-    return null
+    return null;
   }
 
-  return (
-    <meta 
-      name="google-site-verification" 
-      content={verificationCode} 
-    />
-  )
-}
+  return <meta name="google-site-verification" content={verificationCode} />;
+};
 
-export default GoogleSearchConsole 
+export default GoogleSearchConsole;

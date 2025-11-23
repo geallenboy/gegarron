@@ -136,3 +136,6 @@ dist
 # wrangler files
 .wrangler
 .dev.vars
+
+.claude
+GEMINI.md

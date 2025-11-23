@@ -5,16 +5,16 @@ declare global {
       command: 'config' | 'event' | 'js' | 'set',
       targetId: string,
       config?: {
-        page_location?: string
-        page_title?: string
-        page_path?: string
-        event_category?: string
-        event_label?: string
-        value?: number
-        [key: string]: any
+        page_location?: string;
+        page_title?: string;
+        page_path?: string;
+        event_category?: string;
+        event_label?: string;
+        value?: number;
+        [key: string]: any;
       }
-    ) => void
+    ) => void;
   }
 }
 
-export {} 
+export {};

@@ -1,70 +1,43 @@
-import '@/styles/tailwind.css'
-import { Providers } from './providers'
-import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
-import { name } from '@/config/infoConfig'
+import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
+import './globals.css';
+import { Providers } from './providers';
+import { cn } from '@/lib/utils';
 
-const inter = Inter({ subsets: ['latin'] })
+const fontSans = Inter({
+  subsets: ['latin'],
+  variable: '--font-sans',
+});
 
 export const metadata: Metadata = {
-  title: `${name} | AI Developer & Creator`,
-  description: `Portfolio of ${name}, an independent developer passionate about creating innovative solutions with AI. Specializing in AI automation, full-stack development, and open source.`,
-  keywords: ['AI', 'Developer', 'Portfolio', 'Next.js', 'React', 'TypeScript', 'TailwindCSS', 'n8n', 'Automation', 'Gegarron', '独立开发者', 'AI工程师', '全栈', '开源'],
-  authors: [{ name: name, url: 'https://gegarron.com' }],
-  creator: name,
-  publisher: name,
+  title: {
+    default: 'Ge Garron · AI & Web3 Developer',
+    template: '%s | Ge Garron',
+  },
+  description: 'Building AI applications and Web3 tools for investment and automation.',
+  keywords: ['AI', 'Web3', 'Developer', 'Next.js', 'React', 'LangChain', 'Ethereum', 'DApp'],
+  authors: [{ name: 'Ge Garron' }],
+  creator: 'Ge Garron',
   openGraph: {
-    title: `${name} | AI Developer & Creator`,
-    description: `Explore the work of ${name}, an expert in AI automation and innovative application development.`,
-    url: 'https://gegarron.com',
-    siteName: `${name}'s Portfolio`,
-    images: [
-      {
-        url: 'https://gegarron.com/og-image.png', // Must be an absolute URL
-        width: 1200,
-        height: 630,
-        alt: `Portfolio of ${name}`,
-      },
-    ],
-    locale: 'en_US',
     type: 'website',
+    locale: 'en_US',
+    title: 'Ge Garron · AI & Web3 Developer',
+    description: 'Building AI applications and Web3 tools for investment and automation.',
+    siteName: 'Ge Garron',
   },
   twitter: {
     card: 'summary_large_image',
-    title: `${name} | AI Developer & Creator`,
-    description: `Portfolio of ${name}, an independent developer passionate about creating innovative solutions with AI.`,
-    creator: '@gejialun88',
-    images: ['https://gegarron.com/og-image.png'], // Must be an absolute URL
+    title: 'Ge Garron · AI & Web3 Developer',
+    description: 'Building AI applications and Web3 tools for investment and automation.',
   },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
-  },
-  icons: {
-    icon: '/favicon.png',
-    shortcut: '/favicon.png',
-    apple: '/favicon.png',
-  },
-  manifest: '/site.webmanifest',
-}
+};
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode
-}>) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
+    <html lang="en" className="dark" suppressHydrationWarning>
+      <body className={cn('bg-background min-h-screen font-sans antialiased', fontSans.variable)}>
         <Providers>{children}</Providers>
       </body>
     </html>
-  )
+  );
 }
