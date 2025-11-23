@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="zh-CN" data-ver="<%= PKG_VERSION %>">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width,height=device-height,initial-scale=1.0,maximum-scale=1.0,user-scalable=no"
+    />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <!-- 设置Web应用以全屏模式运行 -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <!-- 隐藏状态栏 -->
+    <meta name="format-detection" content="telephone=no" />
+    <!-- 告诉设备忽略将页面中的数字识别为电话号码 -->
+    <title>gegarron</title>
+    <style>
+      @font-face {
+        font-family: 'MiSans VF';
+        src: url('../Assets/font/MiSansVF.ttf') format('truetype');
+      }
+    </style>
+
+  </head>
+  <body data-build-time="<%= BUILD_TIME %>">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

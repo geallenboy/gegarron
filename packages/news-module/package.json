@@ -1,0 +1,35 @@
+{
+  "name": "@gegarron/news-module",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "./src/index.tsx",
+  "exports": {
+    ".": "./src/index.tsx"
+  },
+  "scripts": {
+    "dev": "vite --mode dev --port 9991",
+    "build": "tsc && vite build",
+    "type-check": "tsc --noEmit",
+    "clean": "rm -rf dist node_modules"
+  },
+  "dependencies": {
+    "@gegarron/main-app": "workspace:*",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "react-router-dom": "^7.9.4",
+    "zustand": "^5.0.8",
+    "lucide-react": "^0.546.0",
+    "clsx": "^2.1.1",
+    "class-variance-authority": "^0.7.1",
+    "dayjs": "^1.11.18"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.1.15",
+    "@types/react": "^19.1.16",
+    "@types/react-dom": "^19.1.9",
+    "@vitejs/plugin-react": "^5.0.4",
+    "tailwindcss": "^4.1.15",
+    "typescript": "~5.9.3",
+    "vite": "^7.2.2"
+  }
+}
