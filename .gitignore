@@ -44,6 +44,6 @@ coverage/
 
 # 其他
 *.tsbuildinfo
-gejialun/
+docs/
 .claude
 CLAUDE.md
