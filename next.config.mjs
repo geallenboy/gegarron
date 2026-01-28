@@ -1,5 +1,4 @@
-import createNextIntlPlugin from 'next-intl/plugin'
-const withNextIntl = createNextIntlPlugin()
+
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -10,7 +9,7 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'favicon.im',
+        hostname: 'gegarron.com',
       },
       {
         protocol: 'https',
@@ -24,4 +23,4 @@ const nextConfig = {
   },
 }
 
-export default withNextIntl(nextConfig)
+export default nextConfig
