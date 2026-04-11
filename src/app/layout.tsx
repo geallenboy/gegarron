@@ -1,40 +1,72 @@
 import '@/app/globals.css'
 import { Providers } from './providers'
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Noto_Sans_SC, Noto_Serif_SC } from 'next/font/google'
 import { name } from '@/config/infoConfig'
+import { TopNav } from '@/components/TopNav'
+import { Footer } from '@/components/Footer'
 
-const inter = Inter({ subsets: ['latin'] })
+const sans = Noto_Sans_SC({
+  subsets: ['latin'],
+  weight: ['400', '500', '700', '900'],
+  variable: '--font-sans',
+  display: 'swap',
+})
+
+const display = Noto_Serif_SC({
+  subsets: ['latin'],
+  weight: ['400', '600', '700'],
+  variable: '--font-display',
+  display: 'swap',
+})
 
 export const metadata: Metadata = {
-  title: `${name} | AI Developer & Creator`,
-  description: `Portfolio of ${name}, an independent developer passionate about creating innovative solutions with AI. Specializing in AI automation, full-stack development, and open source.`,
-  keywords: ['AI', 'Developer', 'Portfolio', 'Next.js', 'React', 'TypeScript', 'TailwindCSS', 'n8n', 'Automation', 'Gegarron', '独立开发者', 'AI工程师', '全栈', '开源'],
+  metadataBase: new URL('https://gegarron.com'),
+  title: {
+    default: `${name} | AI 创作者与独立开发者`,
+    template: `%s | ${name}`,
+  },
+  description:
+    '记录 AI、自媒体、独立开发与个人成长的公开工作台，同时提供 AI 工作流升级、自动化与产品共创服务。',
+  keywords: [
+    'AI 自媒体',
+    '独立开发',
+    'AI 工作流',
+    'AI 自动化',
+    '内容系统',
+    '个人品牌',
+    '超级个体',
+    'Gegarron',
+    'AI 创作者',
+    'AI 产品',
+  ],
   authors: [{ name: name, url: 'https://gegarron.com' }],
   creator: name,
   publisher: name,
   openGraph: {
-    title: `${name} | AI Developer & Creator`,
-    description: `Explore the work of ${name}, an expert in AI automation and innovative application development.`,
+    title: `${name} | AI 创作者与独立开发者`,
+    description:
+      '公开记录思考、文章、产品与 AI 工作流实验，持续构建内容、产品和个人成长系统。',
     url: 'https://gegarron.com',
-    siteName: `${name}'s Portfolio`,
+    siteName: `${name} Public Workbench`,
     images: [
       {
-        url: 'https://gegarron.com/og-image.png', // Must be an absolute URL
+        url: 'https://gegarron.com/og-image.png',
         width: 1200,
         height: 630,
-        alt: `Portfolio of ${name}`,
+        alt: `${name} personal site`,
       },
     ],
-    locale: 'en_US',
+    locale: 'zh_CN',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: `${name} | AI Developer & Creator`,
-    description: `Portfolio of ${name}, an independent developer passionate about creating innovative solutions with AI.`,
+    title: `${name} | AI 创作者与独立开发者`,
+    description:
+      '记录 AI、自媒体、独立开发与个人成长，分享产品实验和工作流升级实践。',
     creator: '@gejialun88',
-    images: ['https://gegarron.com/og-image.png'], // Must be an absolute URL
+    images: ['https://gegarron.com/og-image.png'],
   },
   robots: {
     index: true,
@@ -61,9 +93,13 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
-        <Providers>{children}</Providers>
+    <html lang="zh-CN" suppressHydrationWarning>
+      <body className={`${sans.variable} ${display.variable} font-sans`}>
+        <Providers>
+          <TopNav />
+          {children}
+          <Footer />
+        </Providers>
       </body>
     </html>
   )

@@ -11,13 +11,13 @@ type BreadcrumbProps = {
 
 export function Breadcrumb({ items }: BreadcrumbProps) {
   return (
-    <div className="flex items-center gap-2 text-xs text-slate-500 dark:text-white/50">
+    <div className="flex items-center gap-2 text-xs text-(--muted)">
       {items.map((item, index) => (
         <span key={`${item.href}-${item.label}`} className="inline-flex items-center gap-2">
-          <Link href={item.href} className="transition hover:text-slate-900 dark:hover:text-white">
+          <Link href={item.href} className="transition hover:text-(--ink)">
             {item.label}
           </Link>
-          {index < items.length - 1 && <span>›</span>}
+          {index < items.length - 1 && <span className="text-(--muted)/50">›</span>}
         </span>
       ))}
     </div>
